@@ -123,5 +123,78 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitnessApp.Controllers.ProgramController",
+    "Method": "Post",
+    "RelativePath": "api/Program",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "program",
+        "Type": "FitnessApp.Model.FitnessProgram",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FitnessApp.Model.FitnessProgram",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FitnessApp.Controllers.ProgramController",
+    "Method": "Get",
+    "RelativePath": "api/Program/{programCode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "programCode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FitnessApp.Program",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FitnessApp.Controllers.ProgramController",
+    "Method": "Put",
+    "RelativePath": "api/Program/{programCode}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "programCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "program",
+        "Type": "FitnessApp.Model.FitnessProgram",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

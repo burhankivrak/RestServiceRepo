@@ -18,7 +18,7 @@ namespace FitnessApp
             builder.Services.AddSwaggerGen();
             builder.Services.AddSingleton<IMemberRepository, MemberRepository>();
             builder.Services.AddSingleton<IEquipmentRepository, EquipmentRepository>();
-
+            builder.Services.AddSingleton<IProgramRepository, ProgramRepository>();
 
             var app = builder.Build();
 
