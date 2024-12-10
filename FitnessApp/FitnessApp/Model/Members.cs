@@ -1,7 +1,10 @@
-﻿namespace FitnessApp.Model
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace FitnessApp.Model
 {
     public class Members
     {
+        [Key]
         public int Id { get; set; }
         public string Voornaam { get; set; }
         public string Achternaam { get; set; }

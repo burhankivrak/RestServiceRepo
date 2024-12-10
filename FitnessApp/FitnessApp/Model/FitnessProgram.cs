@@ -1,7 +1,12 @@
-﻿namespace FitnessApp.Model
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace FitnessApp.Model
 {
+    [Table("program", Schema = "dbo")]
     public class FitnessProgram
     {
+        [Key]
         public string ProgramCode { get; set; }
         public string Name { get; set; }
         public string Target { get; set; }
