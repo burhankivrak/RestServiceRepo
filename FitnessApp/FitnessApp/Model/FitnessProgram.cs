@@ -7,10 +7,15 @@ namespace FitnessApp.Model
     public class FitnessProgram
     {
         [Key]
+        [Column("programCode")]
         public string ProgramCode { get; set; }
+        [Column("name")]
         public string Name { get; set; }
+        [Column("target")]
         public string Target { get; set; }
+        [Column("startdate")]
         public DateTime StartDate { get; set; }
+        [Column("max_members")]
         public int MaxMembers { get; set; }
 
         public FitnessProgram () { }
