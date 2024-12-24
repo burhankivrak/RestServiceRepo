@@ -6,5 +6,6 @@ namespace FitnessApp.Interface
     {
         void AddEquipment(Equipment e);
         Equipment GetEquipment(int id);
+        void UpdateEquipmentStatus(int id, string status);
     }
 }

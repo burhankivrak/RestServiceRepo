@@ -9,6 +9,8 @@ namespace FitnessApp.Data
         public DbSet<Members> Members { get; set; }
         public DbSet<Equipment> Equipment { get; set; }
         public DbSet<FitnessProgram> Program { get; set; }
+        public DbSet<Reservation> Reservation { get; set; }
+        public DbSet<Timeslot> Timeslot { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -11,15 +11,18 @@ namespace FitnessApp.Model
         public int Id { get; set; }
         [Column("device_type")]
         public string Name { get; set; }
+        [Column("status")]
+        public string Status { get; set; }
 
         public Equipment()
         {
         }
 
-        public Equipment(int Id, string Name)
+        public Equipment(int Id, string Name, string Status)
         {
-            this.Id = Id;
-            this.Name = Name;
+            Id = Id;
+            Name = Name;
+            Status = Status;
         }
     }
 }

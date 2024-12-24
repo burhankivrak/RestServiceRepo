@@ -22,26 +22,27 @@ namespace FitnessApp.Model
         [Column("membertype")]
         public string TypeKlant { get; set; }
         [Column("interests")]
-        public List<string> Interesses { get; set; } 
+        public List<string>? Interesses { get; set; } // Nullable gemaakt
 
         public Members()
         {
+            Interesses = null;  // Optioneel, kan ook niet worden geïnitialiseerd
         }
-        public Members(int Id, string voornaam, string achternaam, string emailadres, string verblijfsplaats, DateTime geboortedatum, string typeKlant)
-        {
-            this.Id = Id;
-            Voornaam = voornaam;
-            Achternaam = achternaam;
-            Emailadres = emailadres;
-            Verblijfsplaats = verblijfsplaats;
-            Geboortedatum = geboortedatum;
-            TypeKlant = typeKlant;
-            Interesses = new List<string>(); 
-        }
+        //public Members(int Id, string voornaam, string achternaam, string emailadres, string verblijfsplaats, DateTime geboortedatum, string typeKlant)
+        //{
+        //    this.Id = Id;
+        //    Voornaam = voornaam;
+        //    Achternaam = achternaam;
+        //    Emailadres = emailadres;
+        //    Verblijfsplaats = verblijfsplaats;
+        //    Geboortedatum = geboortedatum;
+        //    TypeKlant = typeKlant;
+        //    Interesses = new List<string>(); 
+        //}
 
-        public Members(int Id, string voornaam, string achternaam, string emailadres, string verblijfsplaats, DateTime geboortedatum, string typeKlant, List<string> interesses)
+        public Members(int id, string voornaam, string achternaam, string emailadres, string verblijfsplaats, DateTime geboortedatum, string typeKlant, List<string> interesses)
         {
-            this.Id = Id;
+            Id = id;
             Voornaam = voornaam;
             Achternaam = achternaam;
             Emailadres = emailadres;

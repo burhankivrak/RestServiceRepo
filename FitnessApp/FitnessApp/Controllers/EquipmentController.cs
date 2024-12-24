@@ -35,5 +35,19 @@ namespace FitnessApp.Controllers
             repo.AddEquipment(e);
             return CreatedAtAction(nameof(Get), new { id = e.Id }, e);
         }
+
+        [HttpPut("{id}")]
+        public ActionResult Put(int id, [FromQuery] string status)
+        {
+            try
+            {
+                repo.UpdateEquipmentStatus(id, status);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
