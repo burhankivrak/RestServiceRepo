@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.Metrics;
+using FitnessApp.Data;
 using FitnessApp.Interface;
 using FitnessApp.Model;
 
@@ -6,42 +7,46 @@ namespace FitnessApp.Manager
 {
     public class MemberRepository : IMemberRepository
     {
-        private Dictionary<int, Members> data = new Dictionary<int, Members>();
-
+        private FitnessContext context;
 
         public MemberRepository()
         {
-            data.Add(1, new Members(1, "Burhan", "Kivrak", "burhankivrak@gmail.com", "Mariakerke", new DateTime(2001, 3, 21), "Gold"));
+            this.context = new FitnessContext();
         }
 
         public void AddMember(Members member)
         {
-            if (!data.ContainsKey(member.Id))
-                data.Add(member.Id, member);
-            else
-                throw new Exception("member already added");
+            if (ExistsMember(member.Id))
+                throw new Exception("Member already exists");
+            
+            context.Members.Add(member);
+            context.SaveChanges();
         }
 
         public Members GetMember(int id)
         {
-            if (data.ContainsKey(id))
-                return data[id];
-            else
-                throw new Exception("member doesn't exist");
+            var member = context.Members.FirstOrDefault(m => m.Id == id);
+
+            if (member == null)
+                throw new Exception("Member doesn't exist");
+
+            return member;
         }
 
         public void UpdateMember(Members member)
         {
-            if (data.ContainsKey(member.Id))
-                data[member.Id] = member;
-            else
-                throw new Exception("member doesn't exist");
+            var existingMember = context.Members.FirstOrDefault(m => m.Id == member.Id);
+
+            if (existingMember == null)
+                throw new Exception("Member doesn't exist");
+
+            context.Entry(existingMember).CurrentValues.SetValues(member);
+            context.SaveChanges();
         }
 
         public bool ExistsMember(int id)
         {
-            if (data.ContainsKey(id)) return true;
-            else return false;
+            return context.Members.Any(m => m.Id == id);
         }
     }
 }

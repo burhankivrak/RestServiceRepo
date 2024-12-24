@@ -46,11 +46,11 @@ namespace FitnessApp.Manager
             if (existingProgram == null)
                 throw new Exception("Program doesn't exist");
 
-            existingProgram.Name = program.Name;
-            existingProgram.Target = program.Target;
-            existingProgram.StartDate = program.StartDate;
-            existingProgram.MaxMembers = program.MaxMembers;
-            
+            //existingProgram.Name = program.Name;
+            //existingProgram.Target = program.Target;
+            //existingProgram.StartDate = program.StartDate;
+            //existingProgram.MaxMembers = program.MaxMembers;
+            context.Entry(existingProgram).CurrentValues.SetValues(program);
             context.SaveChanges();
         }
     }

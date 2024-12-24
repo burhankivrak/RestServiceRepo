@@ -166,7 +166,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "FitnessApp.Program",
+        "Type": "FitnessApp.Model.FitnessProgram",
         "MediaTypes": [
           "text/plain",
           "application/json",

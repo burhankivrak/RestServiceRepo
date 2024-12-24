@@ -16,7 +16,7 @@ namespace FitnessApp.Controllers
         }
 
         [HttpGet("{programCode}")]
-        public ActionResult<Program> Get(string programCode)
+        public ActionResult<FitnessProgram> Get(string programCode)
         {
             try
             {
@@ -31,17 +31,30 @@ namespace FitnessApp.Controllers
         [HttpPost]
         public ActionResult<FitnessProgram> Post([FromBody] FitnessProgram program)
         {
-            repo.AddProgram(program);
-            return CreatedAtAction(nameof(Get), new { programCode = program.ProgramCode }, program);
+            try
+            {
+                repo.AddProgram(program);
+                return CreatedAtAction(nameof(Get),
+                    new { programCode = program.ProgramCode },
+                    program);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPut("{programCode}")]
         public IActionResult Put(string programCode, [FromBody] FitnessProgram program)
         {
-            if (program == null || program.ProgramCode != programCode)
+            if (program == null)
             {
                 return BadRequest();
             }
+
+            //DOE DIT WEG INDIEN JE PROGRAMCODE OOK IN DE JSON MOET SCHRIJVEN
+            program.ProgramCode = programCode;
+
             if (!repo.ExistsProgram(programCode))
             {
                 repo.AddProgram(program);

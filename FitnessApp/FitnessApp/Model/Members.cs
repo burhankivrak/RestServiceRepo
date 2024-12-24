@@ -22,7 +22,7 @@ namespace FitnessApp.Model
         [Column("membertype")]
         public string TypeKlant { get; set; }
         [Column("interests")]
-        public List<string> Interesses { get; set; }
+        public List<string> Interesses { get; set; } 
 
         public Members()
         {

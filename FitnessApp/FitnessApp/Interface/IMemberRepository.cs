@@ -8,7 +8,6 @@ namespace FitnessApp.Interface
         void AddMember(Members member);
         Members GetMember(int id);
         void UpdateMember(Members member);
-
         bool ExistsMember(int id);
     }
 }

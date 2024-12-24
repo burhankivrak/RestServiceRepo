@@ -34,17 +34,27 @@ namespace FitnessApp.Controllers
         [HttpPost]
         public ActionResult<Members> Post([FromBody] Members member)
         {
+            try
+            { 
             repo.AddMember(member);
             return CreatedAtAction(nameof(Get), new { id = member.Id }, member);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Members member)
         {
-            if (member == null || member.Id != id)
+            if (member == null)
             {
                 return BadRequest();
             }
+
+            member.Id = id;
+
             if (!repo.ExistsMember(id))
             {
                 repo.AddMember(member);

@@ -15,13 +15,13 @@ namespace FitnessApp.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Define a ValueConverter to convert List<string> to a string and vice versa
+            // Definieer een ValueConverter om een List<string> te converteren naar een string en vice versa
             var interessesConverter = new ValueConverter<List<string>, string>(
-                v => string.Join(",", v),  // Convert List<string> to a comma-separated string
-                v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList()  // Convert comma-separated string back to List<string>
+                v => string.Join(",", v),  // Converteer List<string> naar een komma-gescheiden string
+                v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList()  // Converteer een komma-gescheiden string terug naar een List<string>
             );
 
-            // Apply the ValueConverter to the "Interesses" property in the "Members" entity
+            // Pas de ValueConverter toe op de "Interesses" eigenschap in de "Members" entiteit
             modelBuilder.Entity<Members>()
                 .Property(m => m.Interesses)
                 .HasConversion(interessesConverter);
