@@ -9,34 +9,31 @@ namespace FitnessApp.Model
         [Key]
         [Column("reservation_id")]
         public int Id { get; set; }
-        [Column("equipment_id")]
-        public int EquipmentId { get; set; }
-        [Column("time_slot_id")]
-        public int TimeSlotId { get; set; }
-        [Column("date")]
-        public DateTime Date { get; set; }
         [Column("member_id")]
         public int MemberId { get; set; }
+        [Column("date")]
+        public DateTime Date { get; set; }
 
+        [NotMapped] // We slaan deze niet op in de database, het zijn afgeleide velden.
+        public string Voornaam => Member?.Voornaam;
 
-        [ForeignKey("EquipmentId")]
-        public Equipment Equipment { get; set; }
+        [NotMapped]
+        public string Achternaam => Member?.Achternaam;
 
-        [ForeignKey("TimeSlotId")]
-        public Timeslot Timeslot { get; set; }
+        [NotMapped]
+        public string Emailadres => Member?.Emailadres;
 
         [ForeignKey("MemberId")]
         public Members Member { get; set; }
+
         public Reservation()
         {
         }
-
-        public Reservation(int equipmentId, int timeSlotId, DateTime date, int memberId)
+        public Reservation(int id, int memberId, DateTime date)
         {
-            EquipmentId = equipmentId;
-            TimeSlotId = timeSlotId;
-            Date = date;
+            Id = id;
             MemberId = memberId;
+            Date = date;
         }
     }
 }

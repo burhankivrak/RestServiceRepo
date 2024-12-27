@@ -46,14 +46,25 @@ namespace FitnessApp.Manager
             equipment.Status = status;
             context.SaveChanges();
 
-            //Indien in onderhoud, alle reservaties met de gegeven equipmentid worden verwijderd
+            // Indien in onderhoud, alle reservaties met de gegeven equipmentid worden verwijderd
             if (status.Equals("UnderMaintenance", StringComparison.OrdinalIgnoreCase))
             {
-                var reservations = context.Reservation.Where(r => r.EquipmentId == id).ToList();
+                var reservationTimeslots = context.ReservationTimeslot
+                                                  .Where(rt => rt.EquipmentId == id)
+                                                  .ToList();
 
-                if (reservations.Any())
+                if (reservationTimeslots.Any())
                 {
-                    context.Reservation.RemoveRange(reservations);
+                    foreach (var reservationTimeslot in reservationTimeslots)
+                    {
+                        var reservation = context.Reservation.FirstOrDefault(r => r.Id == reservationTimeslot.ReservationId);
+                        if (reservation != null)
+                        {
+                            context.Reservation.Remove(reservation); 
+                        }
+                    }
+
+                    context.ReservationTimeslot.RemoveRange(reservationTimeslots);
                     context.SaveChanges();
                 }
                 else

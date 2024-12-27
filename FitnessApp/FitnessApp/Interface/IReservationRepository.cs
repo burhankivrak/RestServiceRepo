@@ -1,13 +1,14 @@
-﻿//using FitnessApp.Model;
-//using System.Diagnostics.Metrics;
+﻿using FitnessApp.Model;
+using System.Diagnostics.Metrics;
 
-//namespace FitnessApp.Interface
-//{
-//    public interface IReservationRepository
-//    {
-//        void AddReservation(Reservation res);
-//        Reservation GetReservation(int id);
-//        void RemoveReservation(Reservation res);
-//        void UpdateReservation(Reservation res);
-//    }
-//}
+namespace FitnessApp.Interface
+{
+    public interface IReservationRepository
+    {
+        void AddReservation(Reservation res);
+        Reservation GetReservation(int id);
+        void RemoveReservation(Reservation res);
+        void UpdateReservation(Reservation res);
+        bool ExistsReservation(int id);
+    }
+}

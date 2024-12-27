@@ -19,6 +19,8 @@ namespace FitnessApp
             builder.Services.AddSingleton<IMemberRepository, MemberRepository>();
             builder.Services.AddSingleton<IEquipmentRepository, EquipmentRepository>();
             builder.Services.AddSingleton<IProgramRepository, ProgramRepository>();
+            builder.Services.AddSingleton<IReservationRepository, ReservationRepository>();
+            builder.Services.AddSingleton<IReservationTimeslotRepository, ReservationTimeslotRepository>();
 
             var app = builder.Build();
 

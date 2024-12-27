@@ -4,6 +4,7 @@ using FitnessApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FitnessApp.Migrations
 {
     [DbContext(typeof(FitnessContext))]
-    partial class FitnessContextModelSnapshot : ModelSnapshot
+    [Migration("20241224170112_extracolm")]
+    partial class extracolm
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -122,25 +125,6 @@ namespace FitnessApp.Migrations
                     b.ToTable("members", "dbo");
                 });
 
-            modelBuilder.Entity("FitnessApp.Model.ProgramMembers", b =>
-                {
-                    b.Property<string>("ProgramCode")
-                        .HasColumnType("nvarchar(450)")
-                        .HasColumnName("programCode")
-                        .HasColumnOrder(0);
-
-                    b.Property<int>("MemberId")
-                        .HasColumnType("int")
-                        .HasColumnName("member_id")
-                        .HasColumnOrder(1);
-
-                    b.HasKey("ProgramCode", "MemberId");
-
-                    b.HasIndex("MemberId");
-
-                    b.ToTable("programmembers", "dbo");
-                });
-
             modelBuilder.Entity("FitnessApp.Model.Reservation", b =>
                 {
                     b.Property<int>("Id")
@@ -150,13 +134,33 @@ namespace FitnessApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Achternaam")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("last_name");
+
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2")
                         .HasColumnName("date");
 
+                    b.Property<string>("Emailadres")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("email");
+
                     b.Property<int>("MemberId")
                         .HasColumnType("int")
                         .HasColumnName("member_id");
+
+                    b.Property<string>("ReservationTimeslots")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("reserved_time_slots");
+
+                    b.Property<string>("Voornaam")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("first_name");
 
                     b.HasKey("Id");
 
@@ -222,25 +226,6 @@ namespace FitnessApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("time_slot", "dbo");
-                });
-
-            modelBuilder.Entity("FitnessApp.Model.ProgramMembers", b =>
-                {
-                    b.HasOne("FitnessApp.Model.Members", "Member")
-                        .WithMany()
-                        .HasForeignKey("MemberId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FitnessApp.Model.FitnessProgram", "Program")
-                        .WithMany()
-                        .HasForeignKey("ProgramCode")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Member");
-
-                    b.Navigation("Program");
                 });
 
             modelBuilder.Entity("FitnessApp.Model.Reservation", b =>

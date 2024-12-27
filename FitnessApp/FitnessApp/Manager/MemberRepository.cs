@@ -2,6 +2,7 @@
 using FitnessApp.Data;
 using FitnessApp.Interface;
 using FitnessApp.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace FitnessApp.Manager
 {
@@ -47,6 +48,28 @@ namespace FitnessApp.Manager
         public bool ExistsMember(int id)
         {
             return context.Members.Any(m => m.Id == id);
+        }
+
+        public IEnumerable<Reservation> GetReservationsForMember(int memberId)
+        {
+            var reservations = context.Reservation
+                                      .Include(r => r.Member) 
+                                      .Where(r => r.MemberId == memberId)
+                                      .ToList();
+
+            return reservations;
+        }
+
+        public IEnumerable<FitnessProgram> GetProgramMembersForMember(int memberId)
+        {
+            //var programMembers = context.ProgramMembers.Where(pm =>  pm.MemberId == memberId).ToList();
+            var programMembers = context.ProgramMembers
+                                 .Include(pm => pm.Program) // Laad het gerelateerde programma
+                                 .Where(pm => pm.MemberId == memberId)
+                                 .Select(pm => pm.Program) // Selecteer alleen het programma
+                                 .ToList();
+
+            return programMembers;
         }
     }
 }

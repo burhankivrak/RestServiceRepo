@@ -10,8 +10,9 @@ namespace FitnessApp.Data
         public DbSet<Equipment> Equipment { get; set; }
         public DbSet<FitnessProgram> Program { get; set; }
         public DbSet<Reservation> Reservation { get; set; }
+        public DbSet<ReservationTimeslot> ReservationTimeslot { get; set; }
         public DbSet<Timeslot> Timeslot { get; set; }
-
+        public DbSet<ProgramMembers> ProgramMembers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -28,6 +29,8 @@ namespace FitnessApp.Data
                 .Property(m => m.Interesses)
                 .HasConversion(interessesConverter);
         }
+
+       
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //Server explorer daar uw string ophalen

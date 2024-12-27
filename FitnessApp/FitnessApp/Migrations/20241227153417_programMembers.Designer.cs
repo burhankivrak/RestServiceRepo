@@ -4,6 +4,7 @@ using FitnessApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FitnessApp.Migrations
 {
     [DbContext(typeof(FitnessContext))]
-    partial class FitnessContextModelSnapshot : ModelSnapshot
+    [Migration("20241227153417_programMembers")]
+    partial class programMembers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -126,17 +129,13 @@ namespace FitnessApp.Migrations
                 {
                     b.Property<string>("ProgramCode")
                         .HasColumnType("nvarchar(450)")
-                        .HasColumnName("programCode")
-                        .HasColumnOrder(0);
+                        .HasColumnName("programCode");
 
                     b.Property<int>("MemberId")
                         .HasColumnType("int")
-                        .HasColumnName("member_id")
-                        .HasColumnOrder(1);
+                        .HasColumnName("member_id");
 
-                    b.HasKey("ProgramCode", "MemberId");
-
-                    b.HasIndex("MemberId");
+                    b.HasKey("ProgramCode");
 
                     b.ToTable("programmembers", "dbo");
                 });
@@ -222,25 +221,6 @@ namespace FitnessApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("time_slot", "dbo");
-                });
-
-            modelBuilder.Entity("FitnessApp.Model.ProgramMembers", b =>
-                {
-                    b.HasOne("FitnessApp.Model.Members", "Member")
-                        .WithMany()
-                        .HasForeignKey("MemberId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FitnessApp.Model.FitnessProgram", "Program")
-                        .WithMany()
-                        .HasForeignKey("ProgramCode")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Member");
-
-                    b.Navigation("Program");
                 });
 
             modelBuilder.Entity("FitnessApp.Model.Reservation", b =>

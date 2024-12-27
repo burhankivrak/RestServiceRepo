@@ -64,5 +64,45 @@ namespace FitnessApp.Controllers
             return NoContent();
         }
 
+        [HttpGet("{id}/reservations")]
+        public ActionResult<IEnumerable<Reservation>> GetReservationsForMember(int id)
+        {
+            try
+            {
+                var reservations = repo.GetReservationsForMember(id);
+
+                if (!reservations.Any())
+                {
+                    return NotFound($"No reservations found for member with ID {id}.");
+                }
+
+                return Ok(reservations);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("{id}/program")]
+        public ActionResult<IEnumerable<FitnessProgram>> GetProgramMembersForMember(int id)
+        {
+            try
+            {
+                var programMembers = repo.GetProgramMembersForMember(id);
+
+                if (!programMembers.Any())
+                {
+                    return NotFound($"No programs found for member with ID {id}.");
+                }
+
+                return Ok(programMembers);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
     }
 }

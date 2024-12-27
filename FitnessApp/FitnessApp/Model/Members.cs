@@ -23,7 +23,6 @@ namespace FitnessApp.Model
         public string TypeKlant { get; set; }
         [Column("interests")]
         public List<string>? Interesses { get; set; } // Nullable gemaakt
-
         public Members()
         {
             Interesses = null;  // Optioneel, kan ook niet worden geïnitialiseerd
