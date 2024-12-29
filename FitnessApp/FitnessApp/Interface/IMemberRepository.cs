@@ -11,6 +11,7 @@ namespace FitnessApp.Interface
         bool ExistsMember(int id);
         IEnumerable<Reservation> GetReservationsForMember(int memberId);
         IEnumerable<FitnessProgram> GetProgramMembersForMember(int memberId);
+        IEnumerable<object> GetTrainingsessionsForMember(string type, int memberId);
 
     }
 }

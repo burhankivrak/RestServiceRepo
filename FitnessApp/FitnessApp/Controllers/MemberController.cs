@@ -104,5 +104,19 @@ namespace FitnessApp.Controllers
             }
         }
 
+        [HttpGet("trainingsessions")]
+        public ActionResult<IEnumerable<object>> GetTrainingsessionsForMember([FromQuery] string? type, [FromQuery] int memberId)
+        {
+            try
+            {
+                var trainingsessions = repo.GetTrainingsessionsForMember(type, memberId);
+                return Ok(trainingsessions);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
     }
 }

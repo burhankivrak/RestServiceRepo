@@ -71,5 +71,32 @@ namespace FitnessApp.Manager
 
             return programMembers;
         }
+
+        public IEnumerable<object> GetTrainingsessionsForMember(string type, int memberId)
+        {
+            var runningsessions = context.RunningSession.Where(rs => rs.MemberId == memberId).ToList();
+            var cyclingsessions = context.CyclingSession.Where(cs =>  cs.MemberId == memberId).ToList();
+
+            List<object> sessions = new List<object>();
+
+            if (string.IsNullOrWhiteSpace(type))
+            {
+                sessions.AddRange(runningsessions);
+                sessions.AddRange(cyclingsessions);
+            }
+            else if (type.ToLower() == "running")
+            {
+                sessions.AddRange(runningsessions);
+            }
+            else if (type.ToLower() == "cycling")
+            {
+                sessions.AddRange(cyclingsessions);
+            }
+            else
+            {
+                throw new Exception("Invalid training type specified.");
+            }
+            return sessions;
+        }
     }
 }

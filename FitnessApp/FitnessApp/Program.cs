@@ -21,7 +21,7 @@ namespace FitnessApp
             builder.Services.AddSingleton<IProgramRepository, ProgramRepository>();
             builder.Services.AddSingleton<IReservationRepository, ReservationRepository>();
             builder.Services.AddSingleton<IReservationTimeslotRepository, ReservationTimeslotRepository>();
-
+            builder.Services.AddSingleton<ITrainingsessionRepository, TrainingsessionRepository>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
