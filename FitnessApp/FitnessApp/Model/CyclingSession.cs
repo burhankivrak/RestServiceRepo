@@ -29,21 +29,23 @@ namespace FitnessApp.Model
         [Column("member_id")]
         public int MemberId { get; set; }
         [Column("trainingsimpact")]
-        public string Trainingsimpact { get => _trainingsimpact; set => _trainingsimpact = CalculateTrainingImpact(Avg_watt,Duration); }
-        private string _trainingsimpact;
-        private string CalculateTrainingImpact(int avgWatt, int duration)
+        public string Trainingsimpact { get; set; }
+        public void CalculateTrainingImpact()
         {
-            if (avgWatt < 150)
+            if (Avg_watt < 150)
             {
-                return duration <= 90 ? "low" : "medium";
+                if (Duration <= 90)
+                    Trainingsimpact = "low";
+                else
+                    Trainingsimpact = "medium";
             }
-            else if (avgWatt >= 150 && avgWatt <= 200)
+            else if (Avg_watt >= 150 && Avg_watt <= 200)
             {
-                return "medium";
+                Trainingsimpact = "medium";
             }
-            else // avgWatt > 200
+            else if (Avg_watt > 200)
             {
-                return "high";
+                Trainingsimpact = "high";
             }
         }
 

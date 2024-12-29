@@ -17,8 +17,12 @@ namespace FitnessApp.Manager
 
         public void AddProgram(FitnessProgram program)
         {
+            var programCode = GenerateProgramCode(program);
+
             if (ExistsProgram(program.ProgramCode))
                 throw new Exception("Program already exists");
+
+            program.ProgramCode = programCode;
 
             context.Program.Add(program);  
             context.SaveChanges();
@@ -52,6 +56,37 @@ namespace FitnessApp.Manager
             //existingProgram.MaxMembers = program.MaxMembers;
             context.Entry(existingProgram).CurrentValues.SetValues(program);
             context.SaveChanges();
+        }
+
+        public string GenerateProgramCode(FitnessProgram program)
+        {
+            // Stap 1: Haal de eerste 2-3 letters van de naam
+            string namePrefix = program.Name.Substring(0, Math.Min(3, program.Name.Length)).ToUpper();
+
+            // Stap 2: Bepaal de letter voor de target
+            string targetLetter = program.Target.ToLower() switch
+            {
+                "beginner" => "b",
+                "advanced" => "a",
+                "pro" => "p",
+                _ => throw new Exception("Invalid target specified")
+            };
+
+            // Stap 3: Genereer een willekeurig nummer tussen 1 en 99
+            Random random = new Random();
+            int randomNumber = random.Next(1, 100); // Getal tussen 1 en 99
+
+            // Stap 4: Combineer alles tot een programCode
+            string programCode = $"{namePrefix}{targetLetter}{randomNumber}";
+
+            // Stap 5: Controleer of de code al bestaat en genereer een nieuwe als dat het geval is
+            while (ExistsProgram(programCode))
+            {
+                randomNumber = random.Next(1, 100); // Genereer een nieuw willekeurig nummer
+                programCode = $"{namePrefix}{targetLetter}{randomNumber}";
+            }
+
+            return programCode;
         }
     }
 }

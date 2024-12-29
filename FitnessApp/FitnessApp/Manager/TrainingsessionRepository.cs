@@ -57,6 +57,11 @@ namespace FitnessApp.Manager
                 throw new Exception("Invalid training type specified.");
             }
 
+            foreach (var session in cyclingSessions)
+            {
+                session.CalculateTrainingImpact();
+            }
+
             var sortedSessions = sessions
                 .OrderBy(session => 
                 session is RunningSession ? 

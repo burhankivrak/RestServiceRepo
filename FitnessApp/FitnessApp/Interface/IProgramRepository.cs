@@ -9,5 +9,7 @@ namespace FitnessApp.Interface
         void UpdateProgram(FitnessProgram program);
 
         bool ExistsProgram(string programCode);
+        string GenerateProgramCode(FitnessProgram program);
+
     }
 }
