@@ -8,11 +8,11 @@ namespace FitnessApp.Controllers
     [ApiController]
     public class ProgramController : ControllerBase
     {
-        private IProgramRepository repo;
+        private readonly IProgramRepository _repo;
 
         public ProgramController(IProgramRepository repo)
         {
-            this.repo = repo;
+            _repo = repo;
         }
 
         [HttpGet("{programCode}")]
@@ -20,7 +20,7 @@ namespace FitnessApp.Controllers
         {
             try
             {
-                return Ok(repo.GetProgram(programCode));
+                return Ok(_repo.GetProgram(programCode));
             }
             catch (Exception ex)
             {
@@ -33,7 +33,7 @@ namespace FitnessApp.Controllers
         {
             try
             {
-                repo.AddProgram(program);
+                _repo.AddProgram(program);
                 return CreatedAtAction(nameof(Get),
                     new { programCode = program.ProgramCode },
                     program);
@@ -55,12 +55,12 @@ namespace FitnessApp.Controllers
             //DOE DIT WEG INDIEN JE PROGRAMCODE OOK IN DE JSON MOET SCHRIJVEN
             program.ProgramCode = programCode;
 
-            if (!repo.ExistsProgram(programCode))
+            if (!_repo.ExistsProgram(programCode))
             {
-                repo.AddProgram(program);
+                _repo.AddProgram(program);
                 return CreatedAtAction(nameof(Get), new { programCode = program.ProgramCode }, program);
             }
-            repo.UpdateProgram(program);
+            _repo.UpdateProgram(program);
             return NoContent();
         }
     }

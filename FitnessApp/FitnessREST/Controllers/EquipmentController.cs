@@ -1,5 +1,6 @@
 ﻿using FitnessApp.Interface;
 using FitnessApp.Model;
+using FitnessDL.Enums;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FitnessApp.Controllers
@@ -9,11 +10,11 @@ namespace FitnessApp.Controllers
     public class EquipmentController : ControllerBase
     {
 
-        private IEquipmentRepository repo;
+        private readonly IEquipmentRepository _repo;
 
         public EquipmentController(IEquipmentRepository repo)
         {
-            this.repo = repo;
+            _repo = repo;
         }
 
         [HttpGet("{id}")]
@@ -21,7 +22,7 @@ namespace FitnessApp.Controllers
         {
             try
             {
-                return Ok(repo.GetEquipment(id));
+                return Ok(_repo.GetEquipment(id));
             }
             catch (Exception ex)
             {
@@ -32,21 +33,35 @@ namespace FitnessApp.Controllers
         [HttpPost]
         public ActionResult<Equipment> Post([FromBody] Equipment e)
         {
-            repo.AddEquipment(e);
+            _repo.AddEquipment(e);
             return CreatedAtAction(nameof(Get), new { id = e.Id }, e);
         }
 
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromQuery] string status)
+        public ActionResult Put(int id, [FromQuery] Status status)
         {
             try
             {
-                repo.UpdateEquipmentStatus(id, status);
+                _repo.UpdateEquipmentStatus(id, status);
                 return NoContent();
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult Remove(int id)
+        {
+            try
+            {
+                _repo.RemoveEquipment(id);
+                return NoContent(); 
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message); 
             }
         }
     }

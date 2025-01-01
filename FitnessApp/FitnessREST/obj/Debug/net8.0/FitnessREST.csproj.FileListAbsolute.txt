@@ -169,3 +169,5 @@ C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\Re
 C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessREST\obj\Debug\net8.0\FitnessREST.pdb
 C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessREST\obj\Debug\net8.0\FitnessREST.genruntimeconfig.cache
 C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessREST\obj\Debug\net8.0\ref\FitnessREST.dll
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessREST\bin\Debug\net8.0\FitnessDL.dll
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessREST\bin\Debug\net8.0\FitnessDL.pdb

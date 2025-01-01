@@ -6,10 +6,13 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessBL", "FitnessBL\FitnessBL.csproj", "{C3478F1E-AF82-4F06-A760-CF669622BC6F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{DDF8922F-6B26-4A9A-9A98-B0BA4E27DCE9}"
+	ProjectSection(SolutionItems) = preProject
+		WPFNogTeDoen.txt = WPFNogTeDoen.txt
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessREST", "FitnessREST\FitnessREST.csproj", "{7CED327A-CDCB-4D93-8FBB-17BFAC990E2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessDL", "FitnessDL\FitnessDL.csproj", "{6890883C-A386-450B-A3FE-BA592F14B085}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessDL", "FitnessDL\FitnessDL.csproj", "{6890883C-A386-450B-A3FE-BA592F14B085}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

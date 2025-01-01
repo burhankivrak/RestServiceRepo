@@ -13,3 +13,6 @@ C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\Re
 C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessBL\obj\Debug\net8.0\FitnessBL.pdb
 C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessBL\obj\Debug\net8.0\FitnessBL.genruntimeconfig.cache
 C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessBL\obj\Debug\net8.0\ref\FitnessBL.dll
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessBL\bin\Debug\net8.0\FitnessDL.dll
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessBL\bin\Debug\net8.0\FitnessDL.pdb
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessBL\obj\Debug\net8.0\FitnessBL.csproj.Up2Date

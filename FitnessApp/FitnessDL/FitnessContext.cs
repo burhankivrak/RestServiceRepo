@@ -1,4 +1,5 @@
 ﻿using FitnessApp.Model;
+using FitnessDL.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
@@ -31,6 +32,14 @@ namespace FitnessApp.Data
             modelBuilder.Entity<Members>()
                 .Property(m => m.Interesses)
                 .HasConversion(interessesConverter);
+
+            modelBuilder.Entity<Members>()
+            .Property(m => m.TypeKlant)
+            .HasConversion(new EnumToStringConverter<KlantType>());
+
+            modelBuilder.Entity<Equipment>()
+            .Property(e => e.Status)
+            .HasConversion(new EnumToStringConverter<Status>());
         }
 
        

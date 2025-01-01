@@ -8,11 +8,11 @@ namespace FitnessApp.Controllers
     [ApiController]
     public class ReservationController : ControllerBase
     {
-        private IReservationRepository repo;
+        private readonly IReservationRepository _repo;
 
         public ReservationController(IReservationRepository repo)
         {
-            this.repo = repo;
+            _repo = repo;
         }
 
         [HttpGet("{id}")]
@@ -20,7 +20,7 @@ namespace FitnessApp.Controllers
         {
             try
             {
-                var reservation = repo.GetReservation(id);
+                var reservation = _repo.GetReservation(id);
                 return Ok(reservation);
             }
             catch (Exception ex)
@@ -34,7 +34,7 @@ namespace FitnessApp.Controllers
         {
             try
             {
-                repo.AddReservation(reservation);
+                _repo.AddReservation(reservation);
                 return CreatedAtAction(nameof(Get), new { id = reservation.Id }, reservation);
             }
             catch (Exception ex)
@@ -53,13 +53,13 @@ namespace FitnessApp.Controllers
 
             reservation.Id = id;
 
-            if (!repo.ExistsReservation(id))
+            if (!_repo.ExistsReservation(id))
             {
-                repo.AddReservation(reservation);
+                _repo.AddReservation(reservation);
                 return CreatedAtAction(nameof(Get), new { id = reservation.Id }, reservation);
             }
 
-            repo.UpdateReservation(reservation);
+            _repo.UpdateReservation(reservation);
             return NoContent();  
         }
 
@@ -68,13 +68,13 @@ namespace FitnessApp.Controllers
         {
             try
             {
-                var reservation = repo.GetReservation(id);
+                var reservation = _repo.GetReservation(id);
                 if (reservation == null)
                 {
                     return NotFound();  
                 }
 
-                repo.RemoveReservation(reservation);
+                _repo.RemoveReservation(reservation);
                 return NoContent();  // Return NoContent status (204) on successful deletion
             }
             catch (Exception ex)

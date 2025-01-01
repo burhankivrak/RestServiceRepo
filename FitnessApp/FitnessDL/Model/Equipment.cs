@@ -1,5 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using FitnessDL.Enums;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FitnessApp.Model
 {
@@ -12,7 +14,7 @@ namespace FitnessApp.Model
         [Column("device_type")]
         public string Name { get; set; }
         [Column("status")]
-        public string Status { get; set; }
+        public Status Status { get; set; } = Status.available;
 
         public Equipment()
         {

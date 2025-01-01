@@ -1088,10 +1088,22 @@
       },
       "FitnessBL/1.0.0": {
         "dependencies": {
+          "FitnessDL": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0"
         },
         "runtime": {
           "FitnessBL.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "FitnessDL/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0"
+        },
+        "runtime": {
+          "FitnessDL.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -1701,6 +1713,11 @@
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
     "FitnessBL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FitnessDL/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

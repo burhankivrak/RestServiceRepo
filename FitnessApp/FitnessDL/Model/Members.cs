@@ -1,5 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using FitnessDL.Enums;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FitnessApp.Model
 {
@@ -20,26 +22,15 @@ namespace FitnessApp.Model
         [Column("birthday")]
         public DateTime Geboortedatum { get; set; }
         [Column("membertype")]
-        public string TypeKlant { get; set; }
+        public KlantType TypeKlant { get; set; } = KlantType.Bronze;
         [Column("interests")]
         public List<string>? Interesses { get; set; } // Nullable gemaakt
         public Members()
         {
             Interesses = null;  // Optioneel, kan ook niet worden geïnitialiseerd
         }
-        //public Members(int Id, string voornaam, string achternaam, string emailadres, string verblijfsplaats, DateTime geboortedatum, string typeKlant)
-        //{
-        //    this.Id = Id;
-        //    Voornaam = voornaam;
-        //    Achternaam = achternaam;
-        //    Emailadres = emailadres;
-        //    Verblijfsplaats = verblijfsplaats;
-        //    Geboortedatum = geboortedatum;
-        //    TypeKlant = typeKlant;
-        //    Interesses = new List<string>(); 
-        //}
 
-        public Members(int id, string voornaam, string achternaam, string emailadres, string verblijfsplaats, DateTime geboortedatum, string typeKlant, List<string> interesses)
+        public Members(int id, string voornaam, string achternaam, string emailadres, string verblijfsplaats, DateTime geboortedatum, KlantType typeKlant, List<string> interesses)
         {
             Id = id;
             Voornaam = voornaam;

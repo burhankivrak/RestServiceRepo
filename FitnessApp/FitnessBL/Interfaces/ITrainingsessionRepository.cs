@@ -4,12 +4,12 @@ namespace FitnessApp.Interface
 {
     public interface ITrainingsessionRepository
     {
-        List<RunningSessionDetail> GetRunningSessionDetails(int runningSessionId);
-        List<object> GetSessionsForMonthAndYear(string type, int memberId, int month, int year);
-        public object GetSessionStatsForMember(string type, int memberId);
+        IEnumerable<RunningSessionDetail> GetRunningSessionDetails(int runningSessionId);
+        IEnumerable<object> GetSessionsForMonthAndYear(string type, int memberId, int month, int year);
+        object GetSessionStatsForMember(string type, int memberId);
 
-        public Dictionary<int, int> GetSessionCountPerMonthForYear(string type, int memberId, int year);
-        public List<object> GetSessionCountPerMonthForYearWithType(int memberId, int year);
+        Dictionary<int, int> GetSessionCountPerMonthForYear(string type, int memberId, int year);
+        IEnumerable<object> GetSessionCountPerMonthForYearWithType(int memberId, int year);
 
     }
 }

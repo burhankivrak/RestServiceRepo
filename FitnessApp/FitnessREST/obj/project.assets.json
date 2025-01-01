@@ -1700,6 +1700,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "FitnessDL": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0"
         },
         "compile": {
@@ -1707,6 +1708,19 @@
         },
         "runtime": {
           "bin/placeholder/FitnessBL.dll": {}
+        }
+      },
+      "FitnessDL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FitnessDL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FitnessDL.dll": {}
         }
       }
     }
@@ -5177,6 +5191,11 @@
       "type": "project",
       "path": "../FitnessBL/FitnessBL.csproj",
       "msbuildProject": "../FitnessBL/FitnessBL.csproj"
+    },
+    "FitnessDL/1.0.0": {
+      "type": "project",
+      "path": "../FitnessDL/FitnessDL.csproj",
+      "msbuildProject": "../FitnessDL/FitnessDL.csproj"
     }
   },
   "projectFileDependencyGroups": {

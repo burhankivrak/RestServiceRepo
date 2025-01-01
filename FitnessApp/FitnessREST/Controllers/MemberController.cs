@@ -11,11 +11,11 @@ namespace FitnessApp.Controllers
     public class MemberController : ControllerBase
     {
 
-        private IMemberRepository repo;
+        private readonly IMemberRepository _repo;
 
         public MemberController(IMemberRepository repo)
         {
-            this.repo = repo;
+            _repo = repo;
         }
 
         [HttpGet("{id}")]
@@ -23,7 +23,7 @@ namespace FitnessApp.Controllers
         {
             try
             {
-                return Ok(repo.GetMember(id));
+                return Ok(_repo.GetMember(id));
             }
             catch (Exception ex)
             {
@@ -36,7 +36,7 @@ namespace FitnessApp.Controllers
         {
             try
             { 
-            repo.AddMember(member);
+            _repo.AddMember(member);
             return CreatedAtAction(nameof(Get), new { id = member.Id }, member);
             }
             catch (Exception ex)
@@ -55,12 +55,12 @@ namespace FitnessApp.Controllers
 
             member.Id = id;
 
-            if (!repo.ExistsMember(id))
+            if (!_repo.ExistsMember(id))
             {
-                repo.AddMember(member);
+                _repo.AddMember(member);
                 return CreatedAtAction(nameof(Get), new { id = member.Id }, member);
             }
-            repo.UpdateMember(member);
+            _repo.UpdateMember(member);
             return NoContent();
         }
 
@@ -69,7 +69,7 @@ namespace FitnessApp.Controllers
         {
             try
             {
-                var reservations = repo.GetReservationsForMember(id);
+                var reservations = _repo.GetReservationsForMember(id);
 
                 if (!reservations.Any())
                 {
@@ -89,7 +89,7 @@ namespace FitnessApp.Controllers
         {
             try
             {
-                var programMembers = repo.GetProgramMembersForMember(id);
+                var programMembers = _repo.GetProgramMembersForMember(id);
 
                 if (!programMembers.Any())
                 {
@@ -109,7 +109,7 @@ namespace FitnessApp.Controllers
         {
             try
             {
-                var trainingsessions = repo.GetTrainingsessionsForMember(type, memberId);
+                var trainingsessions = _repo.GetTrainingsessionsForMember(type, memberId);
                 return Ok(trainingsessions);
             }
             catch (Exception ex)

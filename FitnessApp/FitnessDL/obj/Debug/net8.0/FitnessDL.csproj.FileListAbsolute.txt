@@ -1,0 +1,15 @@
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessDL\bin\Debug\net8.0\FitnessDL.deps.json
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessDL\bin\Debug\net8.0\FitnessDL.runtimeconfig.json
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessDL\bin\Debug\net8.0\FitnessDL.dll
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessDL\bin\Debug\net8.0\FitnessDL.pdb
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessDL\obj\Debug\net8.0\FitnessDL.csproj.AssemblyReference.cache
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessDL\obj\Debug\net8.0\FitnessDL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessDL\obj\Debug\net8.0\FitnessDL.AssemblyInfoInputs.cache
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessDL\obj\Debug\net8.0\FitnessDL.AssemblyInfo.cs
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessDL\obj\Debug\net8.0\FitnessDL.csproj.CoreCompileInputs.cache
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessDL\obj\Debug\net8.0\FitnessDL.sourcelink.json
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessDL\obj\Debug\net8.0\FitnessDL.dll
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessDL\obj\Debug\net8.0\refint\FitnessDL.dll
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessDL\obj\Debug\net8.0\FitnessDL.pdb
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessDL\obj\Debug\net8.0\FitnessDL.genruntimeconfig.cache
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessDL\obj\Debug\net8.0\ref\FitnessDL.dll

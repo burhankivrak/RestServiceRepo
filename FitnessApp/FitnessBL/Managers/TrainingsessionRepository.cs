@@ -6,31 +6,30 @@ namespace FitnessApp.Manager
 {
     public class TrainingsessionRepository : ITrainingsessionRepository
     {
-        private FitnessContext context;
+        private readonly FitnessContext _context;
 
-        public TrainingsessionRepository()
+        public TrainingsessionRepository(FitnessContext context)
         {
-            this.context = new FitnessContext();
+            _context = context;
         }
 
-        public List<RunningSessionDetail> GetRunningSessionDetails(int runningSessionId)
+        public IEnumerable<RunningSessionDetail> GetRunningSessionDetails(int runningSessionId)
         {
-            return context.RunningSessionDetail
+            return _context.RunningSessionDetail
                            //.Include(rs => rs.RunningSession)
                            //.ThenInclude(rs => rs.Member)
-                           .Where(rsd => rsd.RunningSessionId == runningSessionId)
-                           .ToList();
+                           .Where(rsd => rsd.RunningSessionId == runningSessionId);
         }
 
-        public List<object> GetSessionsForMonthAndYear(string type, int memberId, int month, int year)
+        public IEnumerable<object> GetSessionsForMonthAndYear(string type, int memberId, int month, int year)
         {
            
-            var runningSessions = context.RunningSession
+            var runningSessions = _context.RunningSession
                 .Where(rs => rs.MemberId == memberId && rs.Date.Month == month && rs.Date.Year == year)
                 .OrderBy(rs => rs.Date)
                 .ToList();
 
-            var cyclingSessions = context.CyclingSession
+            var cyclingSessions = _context.CyclingSession
                 .Where(cs => cs.MemberId == memberId && cs.Date.Month == month && cs.Date.Year == year)
                 .OrderBy(cs => cs.Date)
                 .ToList();
@@ -73,11 +72,11 @@ namespace FitnessApp.Manager
         {
             List<object> sessions = new List<object>();
 
-            var runningSessions = context.RunningSession
+            var runningSessions = _context.RunningSession
                 .Where(rs => rs.MemberId == memberId)
                 .ToList();
 
-            var cyclingSessions = context.CyclingSession
+            var cyclingSessions = _context.CyclingSession
                 .Where(cs => cs.MemberId == memberId)
                 .ToList();
 
@@ -123,11 +122,11 @@ namespace FitnessApp.Manager
 
         public Dictionary<int, int> GetSessionCountPerMonthForYear(string type, int memberId, int year)
         {
-            var runningSessions = context.RunningSession
+            var runningSessions = _context.RunningSession
                 .Where(rs => rs.MemberId == memberId && rs.Date.Year == year)
                 .ToList();
 
-            var cyclingSessions = context.CyclingSession
+            var cyclingSessions = _context.CyclingSession
                 .Where(cs => cs.MemberId == memberId && cs.Date.Year == year)
                 .ToList();
 
@@ -166,13 +165,13 @@ namespace FitnessApp.Manager
             return sessionCountPerMonth;
         }
 
-        public List<object> GetSessionCountPerMonthForYearWithType(int memberId, int year)
+        public IEnumerable<object> GetSessionCountPerMonthForYearWithType(int memberId, int year)
         {
-            var runningSessions = context.RunningSession
+            var runningSessions = _context.RunningSession
                 .Where(rs => rs.MemberId == memberId && rs.Date.Year == year)
                 .ToList();
 
-            var cyclingSessions = context.CyclingSession
+            var cyclingSessions = _context.CyclingSession
                 .Where(cs => cs.MemberId == memberId && cs.Date.Year == year)
                 .ToList();
 

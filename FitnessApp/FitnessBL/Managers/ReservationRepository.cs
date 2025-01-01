@@ -7,30 +7,35 @@ namespace FitnessApp.Manager
 {
     public class ReservationRepository : IReservationRepository
     {
-        private FitnessContext context;
+        private readonly FitnessContext _context;
 
-        public ReservationRepository()
+        public ReservationRepository(FitnessContext context)
         {
-            this.context = new FitnessContext();
+            _context = context;
         }
         public void AddReservation(Reservation res)
         {
+            if (res.Date <= DateTime.Now)
+                throw new Exception("Reservation date must be in the future.");
+
+            if (res.Date > DateTime.Now.AddDays(7))
+                throw new Exception("Reservation date cannot be more than 7 days in advance.");
 
             if (ExistsReservation(res.Id))
                 throw new Exception("Reservation already exists");
 
-            context.Reservation.Add(res);  
-            context.SaveChanges();
+            _context.Reservation.Add(res);
+            _context.SaveChanges();
         }
 
         public bool ExistsReservation(int id)
         {
-            return context.Reservation.Any(r => r.Id == id);
+            return _context.Reservation.Any(r => r.Id == id);
         }
 
         public Reservation GetReservation(int id)
         {
-            var reservation = context.Reservation.Include(r => r.Member).FirstOrDefault(r => r.Id == id);
+            var reservation = _context.Reservation.Include(r => r.Member).FirstOrDefault(r => r.Id == id);
 
 
             if (reservation == null)
@@ -41,26 +46,26 @@ namespace FitnessApp.Manager
 
         public void RemoveReservation(Reservation res)
         {
-            var existingReservation = context.Reservation
+            var existingReservation = _context.Reservation
                                             .FirstOrDefault(r => r.Id == res.Id);
 
             if (existingReservation == null)
                 throw new Exception("Reservation doesn't exist");
 
-            context.Reservation.Remove(existingReservation);  
-            context.SaveChanges();
+            _context.Reservation.Remove(existingReservation);
+            _context.SaveChanges();
         }
 
         public void UpdateReservation(Reservation res)
         {
-            var existingReservation = context.Reservation
+            var existingReservation = _context.Reservation
                                             .FirstOrDefault(r => r.Id == res.Id);
 
             if (existingReservation == null)
                 throw new Exception("Reservation doesn't exist");
 
-            context.Entry(existingReservation).CurrentValues.SetValues(res);
-            context.SaveChanges();
+            _context.Entry(existingReservation).CurrentValues.SetValues(res);
+            _context.SaveChanges();
         }
     }
 }

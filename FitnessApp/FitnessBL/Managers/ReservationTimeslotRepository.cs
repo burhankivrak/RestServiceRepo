@@ -1,31 +1,40 @@
 ﻿using FitnessApp.Data;
 using FitnessApp.Interface;
 using FitnessApp.Model;
+using FitnessDL.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace FitnessApp.Manager
 {
     public class ReservationTimeslotRepository : IReservationTimeslotRepository
     {
-        private FitnessContext context;
+        private readonly FitnessContext _context;
 
-        public ReservationTimeslotRepository()
+        public ReservationTimeslotRepository(FitnessContext context)
         {
-            this.context = new FitnessContext();
+            _context = context;
         }
 
         public void AddReservationTimeslot(ReservationTimeslot res)
         {
+            var equipment = _context.Equipment.FirstOrDefault(e => e.Id == res.EquipmentId);
+            if (equipment == null)
+                throw new Exception($"Equipment with ID {res.EquipmentId} doesn't exist.");
+            
+            if (equipment.Status == Status.deleted)
+                throw new Exception("Cannot create a reservation for equipment that is deleted.");
+
+
             if (ExistsReservationTimeslot(res.ReservationTimeslotId))
                 throw new Exception("Reservation already exists");
 
-            context.ReservationTimeslot.Add(res);
-            context.SaveChanges();
+            _context.ReservationTimeslot.Add(res);
+            _context.SaveChanges();
         }
 
         public ReservationTimeslot GetReservationTimeslot(int id)
         {
-            var reservation = context.ReservationTimeslot.Include(r => r.Reservation).ThenInclude(r => r.Member).Include(r => r.Equipment).Include(r => r.Timeslot).FirstOrDefault(r => r.ReservationTimeslotId == id);
+            var reservation = _context.ReservationTimeslot.Include(r => r.Reservation).ThenInclude(r => r.Member).Include(r => r.Equipment).Include(r => r.Timeslot).FirstOrDefault(r => r.ReservationTimeslotId == id);
 
 
             if (reservation == null)
@@ -36,7 +45,7 @@ namespace FitnessApp.Manager
 
         public bool ExistsReservationTimeslot(int id)
         {
-            return context.ReservationTimeslot.Any(r => r.ReservationTimeslotId == id);
+            return _context.ReservationTimeslot.Any(r => r.ReservationTimeslotId == id);
         }
     }
 }

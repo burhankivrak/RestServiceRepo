@@ -8,25 +8,25 @@ namespace FitnessApp.Manager
 {
     public class MemberRepository : IMemberRepository
     {
-        private FitnessContext context;
+        private readonly FitnessContext _context;
 
-        public MemberRepository()
+        public MemberRepository(FitnessContext context)
         {
-            this.context = new FitnessContext();
+            _context = context;
         }
 
         public void AddMember(Members member)
         {
             if (ExistsMember(member.Id))
                 throw new Exception("Member already exists");
-            
-            context.Members.Add(member);
-            context.SaveChanges();
+
+            _context.Members.Add(member);
+            _context.SaveChanges();
         }
 
         public Members GetMember(int id)
         {
-            var member = context.Members.FirstOrDefault(m => m.Id == id);
+            var member = _context.Members.FirstOrDefault(m => m.Id == id);
 
             if (member == null)
                 throw new Exception("Member doesn't exist");
@@ -36,23 +36,23 @@ namespace FitnessApp.Manager
 
         public void UpdateMember(Members member)
         {
-            var existingMember = context.Members.FirstOrDefault(m => m.Id == member.Id);
+            var existingMember = _context.Members.FirstOrDefault(m => m.Id == member.Id);
 
             if (existingMember == null)
                 throw new Exception("Member doesn't exist");
 
-            context.Entry(existingMember).CurrentValues.SetValues(member);
-            context.SaveChanges();
+            _context.Entry(existingMember).CurrentValues.SetValues(member);
+            _context.SaveChanges();
         }
 
         public bool ExistsMember(int id)
         {
-            return context.Members.Any(m => m.Id == id);
+            return _context.Members.Any(m => m.Id == id);
         }
 
         public IEnumerable<Reservation> GetReservationsForMember(int memberId)
         {
-            var reservations = context.Reservation
+            var reservations = _context.Reservation
                                       .Include(r => r.Member) 
                                       .Where(r => r.MemberId == memberId)
                                       .ToList();
@@ -63,7 +63,7 @@ namespace FitnessApp.Manager
         public IEnumerable<FitnessProgram> GetProgramMembersForMember(int memberId)
         {
             //var programMembers = context.ProgramMembers.Where(pm =>  pm.MemberId == memberId).ToList();
-            var programMembers = context.ProgramMembers
+            var programMembers = _context.ProgramMembers
                                  .Include(pm => pm.Program) // Laad het gerelateerde programma
                                  .Where(pm => pm.MemberId == memberId)
                                  .Select(pm => pm.Program) // Selecteer alleen het programma
@@ -74,8 +74,8 @@ namespace FitnessApp.Manager
 
         public IEnumerable<object> GetTrainingsessionsForMember(string type, int memberId)
         {
-            var runningsessions = context.RunningSession.Where(rs => rs.MemberId == memberId).ToList();
-            var cyclingsessions = context.CyclingSession.Where(cs =>  cs.MemberId == memberId).ToList();
+            var runningsessions = _context.RunningSession.Where(rs => rs.MemberId == memberId).ToList();
+            var cyclingsessions = _context.CyclingSession.Where(cs =>  cs.MemberId == memberId).ToList();
 
             List<object> sessions = new List<object>();
 

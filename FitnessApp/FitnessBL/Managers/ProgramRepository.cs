@@ -9,10 +9,10 @@ namespace FitnessApp.Manager
 {
     public class ProgramRepository : IProgramRepository
     {
-        private FitnessContext context;
-        public ProgramRepository()
+        private readonly FitnessContext _context;
+        public ProgramRepository(FitnessContext context)
         {
-            this.context = new FitnessContext();
+            _context = context;
         }
 
         public void AddProgram(FitnessProgram program)
@@ -24,18 +24,18 @@ namespace FitnessApp.Manager
 
             program.ProgramCode = programCode;
 
-            context.Program.Add(program);  
-            context.SaveChanges();
+            _context.Program.Add(program);
+            _context.SaveChanges();
         }   
 
         public bool ExistsProgram(string programCode)
         {
-            return context.Program.Any(p => p.ProgramCode == programCode);
+            return _context.Program.Any(p => p.ProgramCode == programCode);
         }
 
         public FitnessProgram GetProgram(string programCode)
         {
-            var program = context.Program.FirstOrDefault(p => p.ProgramCode == programCode);
+            var program = _context.Program.FirstOrDefault(p => p.ProgramCode == programCode);
 
             if (program == null)
                 throw new Exception("Program doesn't exist");
@@ -45,7 +45,7 @@ namespace FitnessApp.Manager
 
         public void UpdateProgram(FitnessProgram program)
         {
-            var existingProgram = context.Program.FirstOrDefault(p => p.ProgramCode == program.ProgramCode);
+            var existingProgram = _context.Program.FirstOrDefault(p => p.ProgramCode == program.ProgramCode);
 
             if (existingProgram == null)
                 throw new Exception("Program doesn't exist");
@@ -54,8 +54,8 @@ namespace FitnessApp.Manager
             //existingProgram.Target = program.Target;
             //existingProgram.StartDate = program.StartDate;
             //existingProgram.MaxMembers = program.MaxMembers;
-            context.Entry(existingProgram).CurrentValues.SetValues(program);
-            context.SaveChanges();
+            _context.Entry(existingProgram).CurrentValues.SetValues(program);
+            _context.SaveChanges();
         }
 
         public string GenerateProgramCode(FitnessProgram program)

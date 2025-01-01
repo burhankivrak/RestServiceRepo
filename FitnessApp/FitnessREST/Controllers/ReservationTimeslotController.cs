@@ -9,11 +9,11 @@ namespace FitnessApp.Controllers
     [ApiController]
     public class ReservationTimeslotController : ControllerBase
     {
-        private IReservationTimeslotRepository repo;
+        private readonly IReservationTimeslotRepository _repo;
 
         public ReservationTimeslotController(IReservationTimeslotRepository repo)
         {
-            this.repo = repo;
+            _repo = repo;
         }
 
         [HttpPost]
@@ -35,7 +35,7 @@ namespace FitnessApp.Controllers
                 {
                     res.Equipment = null; // Ensure EF uses the existing EquipmentId
                 }
-                repo.AddReservationTimeslot(res);
+                _repo.AddReservationTimeslot(res);
                 return CreatedAtAction(nameof(Get), new { id = res.ReservationTimeslotId }, res);
             }
             catch (Exception ex)
@@ -49,7 +49,7 @@ namespace FitnessApp.Controllers
         {
             try
             {
-                var reservation = repo.GetReservationTimeslot(id);
+                var reservation = _repo.GetReservationTimeslot(id);
                 return Ok(reservation);
             }
             catch (Exception ex)

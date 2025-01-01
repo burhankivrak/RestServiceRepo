@@ -1,4 +1,6 @@
 ﻿using FitnessApp.Model;
+using FitnessDL.Enums;
+using System.Diagnostics.Metrics;
 
 namespace FitnessApp.Interface
 {
@@ -6,6 +8,8 @@ namespace FitnessApp.Interface
     {
         void AddEquipment(Equipment e);
         Equipment GetEquipment(int id);
-        void UpdateEquipmentStatus(int id, string status);
+        void UpdateEquipmentStatus(int id, Status status);
+
+        void RemoveEquipment(int id);
     }
 }

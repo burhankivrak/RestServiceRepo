@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FitnessDL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d4146fc0cf1fc81849c67f6e8ddb70b70ddb0603")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+92a397d36b19a84e9d094d60239e44ca3c90f828")]
 [assembly: System.Reflection.AssemblyProductAttribute("FitnessDL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FitnessDL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

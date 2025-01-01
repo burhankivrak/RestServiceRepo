@@ -1,16 +1,17 @@
 ﻿using FitnessApp.Data;
 using FitnessApp.Interface;
 using FitnessApp.Model;
+using FitnessDL.Enums;
 
 namespace FitnessApp.Manager
 {
     public class EquipmentRepository : IEquipmentRepository
     {
-        private FitnessContext context;
+        private readonly FitnessContext _context;
 
-        public EquipmentRepository()
+        public EquipmentRepository(FitnessContext context)
         {
-            this.context = new FitnessContext();
+            _context = context;
         }
 
         public void AddEquipment(Equipment e)
@@ -18,13 +19,13 @@ namespace FitnessApp.Manager
             if (ExistsEquipment(e.Id))
                 throw new Exception("Equipment already exists");
 
-            context.Equipment.Add(e);
-            context.SaveChanges();
+            _context.Equipment.Add(e);
+            _context.SaveChanges();
         }
 
         public Equipment GetEquipment(int id)
         {
-            var e = context.Equipment.FirstOrDefault(e => e.Id == id);
+            var e = _context.Equipment.FirstOrDefault(e => e.Id == id);
 
             if (e == null)
                 throw new Exception("Equipment doesn't exist");
@@ -34,22 +35,22 @@ namespace FitnessApp.Manager
 
         public bool ExistsEquipment(int id)
         {
-            return context.Equipment.Any(e => e.Id == id);
+            return _context.Equipment.Any(e => e.Id == id);
         }
 
-        public void UpdateEquipmentStatus(int id, string status)
+        public void UpdateEquipmentStatus(int id, Status status)
         {
-            var equipment = context.Equipment.FirstOrDefault(e => e.Id == id);
+            var equipment = _context.Equipment.FirstOrDefault(e => e.Id == id);
             if (equipment == null)
                 throw new Exception($"Equipment with ID {id} doesn't exist");
 
             equipment.Status = status;
-            context.SaveChanges();
+            _context.SaveChanges();
 
             // Indien in onderhoud, alle reservaties met de gegeven equipmentid worden verwijderd
-            if (status.Equals("UnderMaintenance", StringComparison.OrdinalIgnoreCase))
+            if (status == Status.maintanance)
             {
-                var reservationTimeslots = context.ReservationTimeslot
+                var reservationTimeslots = _context.ReservationTimeslot
                                                   .Where(rt => rt.EquipmentId == id)
                                                   .ToList();
 
@@ -57,21 +58,41 @@ namespace FitnessApp.Manager
                 {
                     foreach (var reservationTimeslot in reservationTimeslots)
                     {
-                        var reservation = context.Reservation.FirstOrDefault(r => r.Id == reservationTimeslot.ReservationId);
+                        var reservation = _context.Reservation.FirstOrDefault(r => r.Id == reservationTimeslot.ReservationId);
                         if (reservation != null)
                         {
-                            context.Reservation.Remove(reservation); 
+                            _context.Reservation.Remove(reservation); 
                         }
                     }
 
-                    context.ReservationTimeslot.RemoveRange(reservationTimeslots);
-                    context.SaveChanges();
+                    _context.ReservationTimeslot.RemoveRange(reservationTimeslots);
+                    _context.SaveChanges();
                 }
                 else
                 {
-                    Console.WriteLine($"No reservations found for equipment with ID {id}.");
+                    throw new Exception($"No reservations found for equipment with ID {id}.");
                 }
             }
+        }
+
+        public void RemoveEquipment(int id)
+        {
+            var equipment = _context.Equipment.FirstOrDefault(e => e.Id == id);
+            
+            if (equipment == null)
+                throw new Exception($"Equipment with ID {id} doesn't exist");
+
+            var futureReservations = _context.ReservationTimeslot
+                                     .Where(rt => rt.EquipmentId == id && rt.Reservation.Date > DateTime.Now)
+                                     .ToList();
+
+            if (futureReservations.Any())
+            {
+                throw new Exception("Equipment cannot be deleted because it has active future reservations.");
+            }
+
+            equipment.Status = Status.deleted;
+            _context.SaveChanges();
         }
 
     }
