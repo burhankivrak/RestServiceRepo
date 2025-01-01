@@ -1,54 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{3922B94C-956B-4C59-AC82-F03B0DC7CAD2}|FitnessApp\\FitnessApp.csproj|c:\\users\\burha\\desktop\\hogent 2024-2025\\semester 1\\pg 2\\opdracht rest-service\\restservicerepo\\fitnessapp\\fitnessapp\\manager\\programrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3922B94C-956B-4C59-AC82-F03B0DC7CAD2}|FitnessApp\\FitnessApp.csproj|solutionrelative:fitnessapp\\manager\\programrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3922B94C-956B-4C59-AC82-F03B0DC7CAD2}|FitnessApp\\FitnessApp.csproj|c:\\users\\burha\\desktop\\hogent 2024-2025\\semester 1\\pg 2\\opdracht rest-service\\restservicerepo\\fitnessapp\\fitnessapp\\model\\programmembers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3922B94C-956B-4C59-AC82-F03B0DC7CAD2}|FitnessApp\\FitnessApp.csproj|solutionrelative:fitnessapp\\model\\programmembers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProgramRepository.cs",
-              "DocumentMoniker": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessApp\\Manager\\ProgramRepository.cs",
-              "RelativeDocumentMoniker": "FitnessApp\\Manager\\ProgramRepository.cs",
-              "ToolTip": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessApp\\Manager\\ProgramRepository.cs",
-              "RelativeToolTip": "FitnessApp\\Manager\\ProgramRepository.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAowEYAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T17:09:01.127Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProgramMembers.cs",
-              "DocumentMoniker": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessApp\\Model\\ProgramMembers.cs",
-              "RelativeDocumentMoniker": "FitnessApp\\Model\\ProgramMembers.cs",
-              "ToolTip": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessApp\\Model\\ProgramMembers.cs",
-              "RelativeToolTip": "FitnessApp\\Model\\ProgramMembers.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T17:08:53.721Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

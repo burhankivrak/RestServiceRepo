@@ -1,0 +1,11 @@
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessApp\obj\Debug\net8.0\FitnessREST.csproj.AssemblyReference.cache
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessApp\obj\Debug\net8.0\FitnessREST.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessApp\obj\Debug\net8.0\FitnessREST.AssemblyInfoInputs.cache
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessApp\obj\Debug\net8.0\FitnessREST.AssemblyInfo.cs
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessApp\obj\Debug\net8.0\FitnessREST.csproj.CoreCompileInputs.cache
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessApp\obj\Debug\net8.0\FitnessREST.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessApp\obj\Debug\net8.0\FitnessREST.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessApp\obj\Debug\net8.0\FitnessREST.sourcelink.json
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessApp\obj\Debug\net8.0\FitnessREST.dll
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessApp\obj\Debug\net8.0\refint\FitnessREST.dll
+C:\Users\burha\Desktop\HoGent 2024-2025\Semester 1\PG 2\Opdracht REST-Service\RestServiceRepo\FitnessApp\FitnessApp\obj\Debug\net8.0\FitnessREST.pdb
