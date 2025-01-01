@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FitnessApp.Model
 {
@@ -16,11 +17,13 @@ namespace FitnessApp.Model
         [Column("equipment_id")]
         public int EquipmentId { get; set; }
 
-
+        [JsonIgnore]
         [ForeignKey("ReservationId")]
         public Reservation Reservation { get; set; }
+        [JsonIgnore]
         [ForeignKey("EquipmentId")]
         public Equipment Equipment { get; set; }
+        [JsonIgnore]
         [ForeignKey("TimeslotId")]
         public Timeslot Timeslot { get; set; }
 

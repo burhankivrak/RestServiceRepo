@@ -1,5 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using FitnessDL;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FitnessApp.Model
 {
@@ -14,6 +16,7 @@ namespace FitnessApp.Model
         [Column("target")]
         public string Target { get; set; }
         [Column("startdate")]
+        [JsonConverter(typeof(JsonDateConverter))]
         public DateTime StartDate { get; set; }
         [Column("max_members")]
         public int MaxMembers { get; set; }

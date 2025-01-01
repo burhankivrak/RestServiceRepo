@@ -40,6 +40,7 @@ namespace FitnessApp.Data
             modelBuilder.Entity<Equipment>()
             .Property(e => e.Status)
             .HasConversion(new EnumToStringConverter<Status>());
+
         }
 
        

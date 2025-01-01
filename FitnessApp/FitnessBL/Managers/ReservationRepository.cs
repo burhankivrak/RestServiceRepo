@@ -35,7 +35,9 @@ namespace FitnessApp.Manager
 
         public Reservation GetReservation(int id)
         {
-            var reservation = _context.Reservation.Include(r => r.Member).FirstOrDefault(r => r.Id == id);
+            var reservation = _context.Reservation
+                .Include(r => r.Member)
+                .FirstOrDefault(r => r.Id == id);
 
 
             if (reservation == null)

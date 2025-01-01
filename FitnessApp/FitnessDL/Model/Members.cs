@@ -1,4 +1,5 @@
-﻿using FitnessDL.Enums;
+﻿using FitnessDL;
+using FitnessDL.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
@@ -20,6 +21,7 @@ namespace FitnessApp.Model
         [Column("address")]
         public string Verblijfsplaats { get; set; }
         [Column("birthday")]
+        [JsonConverter(typeof(JsonDateConverter))]
         public DateTime Geboortedatum { get; set; }
         [Column("membertype")]
         public KlantType TypeKlant { get; set; } = KlantType.Bronze;

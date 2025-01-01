@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FitnessApp.Model
 {
@@ -48,7 +49,7 @@ namespace FitnessApp.Model
             }
         }
 
-
+        [JsonIgnore]
         [ForeignKey("MemberId")]
         public Members Member { get; set; }
 

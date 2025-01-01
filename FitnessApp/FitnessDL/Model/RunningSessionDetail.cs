@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FitnessApp.Model
 {
@@ -16,6 +17,7 @@ namespace FitnessApp.Model
         [Column("interval_speed")]
         public double Interval_Speed { get; set; }
 
+        [JsonIgnore]
         [ForeignKey("RunningSessionId")]
         public RunningSession RunningSession { get; set; }
     }

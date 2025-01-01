@@ -6,13 +6,12 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessBL", "FitnessBL\FitnessBL.csproj", "{C3478F1E-AF82-4F06-A760-CF669622BC6F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{DDF8922F-6B26-4A9A-9A98-B0BA4E27DCE9}"
-	ProjectSection(SolutionItems) = preProject
-		WPFNogTeDoen.txt = WPFNogTeDoen.txt
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessREST", "FitnessREST\FitnessREST.csproj", "{7CED327A-CDCB-4D93-8FBB-17BFAC990E2B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessDL", "FitnessDL\FitnessDL.csproj", "{6890883C-A386-450B-A3FE-BA592F14B085}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessWPFClient", "FitnessWPFClient\FitnessWPFClient.csproj", "{4E1FBB4C-8EF9-4EB4-BBD8-95ABB215009C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,9 +31,16 @@ Global
 		{6890883C-A386-450B-A3FE-BA592F14B085}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6890883C-A386-450B-A3FE-BA592F14B085}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6890883C-A386-450B-A3FE-BA592F14B085}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E1FBB4C-8EF9-4EB4-BBD8-95ABB215009C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E1FBB4C-8EF9-4EB4-BBD8-95ABB215009C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E1FBB4C-8EF9-4EB4-BBD8-95ABB215009C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E1FBB4C-8EF9-4EB4-BBD8-95ABB215009C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4E1FBB4C-8EF9-4EB4-BBD8-95ABB215009C} = {DDF8922F-6B26-4A9A-9A98-B0BA4E27DCE9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {677FF36D-92E2-45FE-B888-D67D116278C1}

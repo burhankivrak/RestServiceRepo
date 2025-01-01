@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FitnessApp.Model
 {
@@ -15,9 +16,11 @@ namespace FitnessApp.Model
         [Column("member_id", Order = 1)]
         public int MemberId { get; set; }
 
+        [JsonIgnore]
         [ForeignKey("ProgramCode")]
         public FitnessProgram Program { get; set; }
 
+        [JsonIgnore]
         [ForeignKey("MemberId")]
         public Members Member { get; set; }
     }

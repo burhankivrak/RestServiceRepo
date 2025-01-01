@@ -1,5 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using FitnessDL;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FitnessApp.Model
 {
@@ -12,6 +15,7 @@ namespace FitnessApp.Model
         [Column("member_id")]
         public int MemberId { get; set; }
         [Column("date")]
+        [JsonConverter(typeof(JsonDateConverter))]
         public DateTime Date { get; set; }
 
         [NotMapped] // We slaan deze niet op in de database, het zijn afgeleide velden.
@@ -23,6 +27,7 @@ namespace FitnessApp.Model
         [NotMapped]
         public string Emailadres => Member?.Emailadres;
 
+        [JsonIgnore]
         [ForeignKey("MemberId")]
         public Members Member { get; set; }
 
