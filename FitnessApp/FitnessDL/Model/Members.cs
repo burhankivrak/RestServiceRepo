@@ -26,10 +26,10 @@ namespace FitnessApp.Model
         [Column("membertype")]
         public KlantType TypeKlant { get; set; } = KlantType.Bronze;
         [Column("interests")]
-        public List<string>? Interesses { get; set; } // Nullable gemaakt
+        public List<string>? Interesses { get; set; } 
         public Members()
         {
-            Interesses = null;  // Optioneel, kan ook niet worden geïnitialiseerd
+            Interesses = null;  
         }
 
         public Members(int id, string voornaam, string achternaam, string emailadres, string verblijfsplaats, DateTime geboortedatum, KlantType typeKlant, List<string> interesses)

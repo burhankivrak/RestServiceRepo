@@ -1,5 +1,6 @@
 ﻿using FitnessApp.Interface;
 using FitnessApp.Model;
+using FitnessBL.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics.Metrics;
@@ -25,7 +26,7 @@ namespace FitnessApp.Controllers
             {
                 return Ok(_repo.GetMember(id));
             }
-            catch (Exception ex)
+            catch (MemberException ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -39,7 +40,7 @@ namespace FitnessApp.Controllers
             _repo.AddMember(member);
             return CreatedAtAction(nameof(Get), new { id = member.Id }, member);
             }
-            catch (Exception ex)
+            catch (MemberException ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -78,7 +79,7 @@ namespace FitnessApp.Controllers
 
                 return Ok(reservations);
             }
-            catch (Exception ex)
+            catch (MemberException ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -98,7 +99,7 @@ namespace FitnessApp.Controllers
 
                 return Ok(programMembers);
             }
-            catch (Exception ex)
+            catch (MemberException ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -112,7 +113,7 @@ namespace FitnessApp.Controllers
                 var trainingsessions = _repo.GetTrainingsessionsForMember(type, memberId);
                 return Ok(trainingsessions);
             }
-            catch (Exception ex)
+            catch (MemberException ex)
             {
                 return BadRequest(new { message = ex.Message });
             }

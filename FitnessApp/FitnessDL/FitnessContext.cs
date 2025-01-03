@@ -22,13 +22,11 @@ namespace FitnessApp.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Definieer een ValueConverter om een List<string> te converteren naar een string en vice versa
             var interessesConverter = new ValueConverter<List<string>, string>(
-                v => string.Join(",", v),  // Converteer List<string> naar een komma-gescheiden string
-                v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList()  // Converteer een komma-gescheiden string terug naar een List<string>
+                v => string.Join(",", v),  
+                v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList() 
             );
 
-            // Pas de ValueConverter toe op de "Interesses" eigenschap in de "Members" entiteit
             modelBuilder.Entity<Members>()
                 .Property(m => m.Interesses)
                 .HasConversion(interessesConverter);
@@ -40,7 +38,6 @@ namespace FitnessApp.Data
             modelBuilder.Entity<Equipment>()
             .Property(e => e.Status)
             .HasConversion(new EnumToStringConverter<Status>());
-
         }
 
        

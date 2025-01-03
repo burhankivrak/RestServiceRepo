@@ -1,5 +1,6 @@
 ﻿using FitnessApp.Interface;
 using FitnessApp.Model;
+using FitnessBL.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,24 +22,10 @@ namespace FitnessApp.Controllers
         {
             try
             {
-                if (res.ReservationId > 0)
-                {
-                    res.Reservation = null; // Ensure EF uses the existing ReservationId
-                }
-
-                if (res.TimeslotId > 0)
-                {
-                    res.Timeslot = null; // Ensure EF uses the existing TimeslotId
-                }
-
-                if (res.EquipmentId > 0)
-                {
-                    res.Equipment = null; // Ensure EF uses the existing EquipmentId
-                }
                 _repo.AddReservationTimeslot(res);
                 return CreatedAtAction(nameof(Get), new { id = res.ReservationTimeslotId }, res);
             }
-            catch (Exception ex)
+            catch (ReservationException ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -52,10 +39,30 @@ namespace FitnessApp.Controllers
                 var reservation = _repo.GetReservationTimeslot(id);
                 return Ok(reservation);
             }
-            catch (Exception ex)
+            catch (ReservationException ex)
             {
                 return BadRequest(ex.Message);
             }
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] ReservationTimeslot reservation)
+        {
+            if (reservation == null)
+            {
+                return BadRequest();
+            }
+
+            reservation.ReservationTimeslotId = id;
+
+            if (!_repo.ExistsReservationTimeslot(id))
+            {
+                _repo.AddReservationTimeslot(reservation);
+                return CreatedAtAction(nameof(Get), new { id = reservation.ReservationTimeslotId }, reservation);
+            }
+
+            _repo.UpdateReservationTimeslot(reservation);
+            return NoContent();
         }
     }
 }

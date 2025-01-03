@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6890883C-A386-450B-A3FE-BA592F14B085}|FitnessDL\\FitnessDL.csproj|c:\\users\\burha\\desktop\\hogent 2024-2025\\semester 1\\pg 2\\opdracht rest-service\\restservicerepo\\fitnessapp\\fitnessdl\\model\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6890883C-A386-450B-A3FE-BA592F14B085}|FitnessDL\\FitnessDL.csproj|solutionrelative:fitnessdl\\model\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6890883C-A386-450B-A3FE-BA592F14B085}|FitnessDL\\FitnessDL.csproj|c:\\users\\burha\\desktop\\hogent 2024-2025\\semester 1\\pg 2\\opdracht rest-service\\restservicerepo\\fitnessapp\\fitnessdl\\jsondateconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6890883C-A386-450B-A3FE-BA592F14B085}|FitnessDL\\FitnessDL.csproj|solutionrelative:fitnessdl\\jsondateconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4E1FBB4C-8EF9-4EB4-BBD8-95ABB215009C}|FitnessWPFClient\\FitnessWPFClient.csproj|c:\\users\\burha\\desktop\\hogent 2024-2025\\semester 1\\pg 2\\opdracht rest-service\\restservicerepo\\fitnessapp\\fitnesswpfclient\\overzichtwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E1FBB4C-8EF9-4EB4-BBD8-95ABB215009C}|FitnessWPFClient\\FitnessWPFClient.csproj|solutionrelative:fitnesswpfclient\\overzichtwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 263,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "JsonDateConverter.cs",
-              "DocumentMoniker": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessDL\\JsonDateConverter.cs",
-              "RelativeDocumentMoniker": "FitnessDL\\JsonDateConverter.cs",
-              "ToolTip": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessDL\\JsonDateConverter.cs",
-              "RelativeToolTip": "FitnessDL\\JsonDateConverter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-01T22:47:18.512Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Reservation.cs",
-              "DocumentMoniker": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessDL\\Model\\Reservation.cs",
-              "RelativeDocumentMoniker": "FitnessDL\\Model\\Reservation.cs",
-              "ToolTip": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessDL\\Model\\Reservation.cs",
-              "RelativeToolTip": "FitnessDL\\Model\\Reservation.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAABEAAAAyAAAAAAAAAA==",
+              "Title": "OverzichtWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessWPFClient\\OverzichtWindow.xaml.cs",
+              "RelativeDocumentMoniker": "FitnessWPFClient\\OverzichtWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessWPFClient\\OverzichtWindow.xaml.cs",
+              "RelativeToolTip": "FitnessWPFClient\\OverzichtWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAC2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-01T22:45:54.486Z",
+              "WhenOpened": "2025-01-03T19:10:51.836Z",
               "EditorCaption": ""
             }
           ]

@@ -1,5 +1,6 @@
 ﻿using FitnessApp.Interface;
 using FitnessApp.Model;
+using FitnessBL.Exceptions;
 using FitnessDL.Enums;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,9 +25,9 @@ namespace FitnessApp.Controllers
             {
                 return Ok(_repo.GetEquipment(id));
             }
-            catch (Exception ex)
+            catch (EquipmentException ex)
             {
-                return BadRequest(ex.Message);
+                return NotFound(ex.Message);
             }
         }
 
@@ -45,23 +46,27 @@ namespace FitnessApp.Controllers
                 _repo.UpdateEquipmentStatus(id, status);
                 return NoContent();
             }
-            catch (Exception ex)
+            catch (EquipmentException ex)
             {
                 return BadRequest(ex.Message);
             }
         }
 
         [HttpDelete("{id}")]
-        public ActionResult Remove(int id)
+        public IActionResult Remove(int id)
         {
             try
             {
+                if (!_repo.ExistsEquipment(id))
+                {
+                    return NotFound();
+                }
                 _repo.RemoveEquipment(id);
-                return NoContent(); 
+                return NoContent();
             }
-            catch (Exception ex)
+            catch (ReservationException ex)
             {
-                return BadRequest(ex.Message); 
+                return BadRequest(ex.Message);
             }
         }
     }

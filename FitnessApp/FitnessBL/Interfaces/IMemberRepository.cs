@@ -7,6 +7,7 @@ namespace FitnessApp.Interface
     {
         void AddMember(Members member);
         Members GetMember(int id);
+        Members? GetMemberByEmailAndBirthday(string email, DateTime geboortedatum);
         void UpdateMember(Members member);
         bool ExistsMember(int id);
         IEnumerable<Reservation> GetReservationsForMember(int memberId);

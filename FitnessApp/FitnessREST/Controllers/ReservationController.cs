@@ -1,6 +1,8 @@
 ﻿using FitnessApp.Interface;
 using FitnessApp.Model;
+using FitnessBL.Exceptions;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FitnessApp.Controllers
 {
@@ -23,7 +25,7 @@ namespace FitnessApp.Controllers
                 var reservation = _repo.GetReservation(id);
                 return Ok(reservation);
             }
-            catch (Exception ex)
+            catch (ReservationException ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -37,7 +39,7 @@ namespace FitnessApp.Controllers
                 _repo.AddReservation(reservation);
                 return CreatedAtAction(nameof(Get), new { id = reservation.Id }, reservation);
             }
-            catch (Exception ex)
+            catch (ReservationException ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -68,16 +70,15 @@ namespace FitnessApp.Controllers
         {
             try
             {
-                var reservation = _repo.GetReservation(id);
-                if (reservation == null)
+                if (!_repo.ExistsReservation(id))
                 {
                     return NotFound();  
                 }
 
-                _repo.RemoveReservation(reservation);
-                return NoContent();  // Return NoContent status (204) on successful deletion
+                _repo.RemoveReservation(id);
+                return NoContent(); 
             }
-            catch (Exception ex)
+            catch (ReservationException ex)
             {
                 return BadRequest(ex.Message);
             }

@@ -18,18 +18,19 @@ namespace FitnessApp.Model
         [JsonConverter(typeof(JsonDateConverter))]
         public DateTime Date { get; set; }
 
-        [NotMapped] // We slaan deze niet op in de database, het zijn afgeleide velden.
-        public string Voornaam => Member?.Voornaam;
+        [NotMapped]
+        public string? Voornaam => Member?.Voornaam;
 
         [NotMapped]
-        public string Achternaam => Member?.Achternaam;
+        public string? Achternaam => Member?.Achternaam;
 
         [NotMapped]
-        public string Emailadres => Member?.Emailadres;
+        public string? Emailadres => Member?.Emailadres;
 
         [JsonIgnore]
         [ForeignKey("MemberId")]
-        public Members Member { get; set; }
+        public Members? Member { get; set; }
+
 
         public Reservation()
         {

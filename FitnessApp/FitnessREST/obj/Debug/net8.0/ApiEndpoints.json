@@ -459,6 +459,27 @@
     ]
   },
   {
+    "ContainingType": "FitnessApp.Controllers.ReservationTimeslotController",
+    "Method": "Put",
+    "RelativePath": "api/ReservationTimeslot/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "reservation",
+        "Type": "FitnessApp.Model.ReservationTimeslot",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "FitnessApp.Controllers.TrainingsessionController",
     "Method": "GetRunningSessionDetails",
     "RelativePath": "api/Trainingsession/running/details/{runningSessionId}",
@@ -576,6 +597,37 @@
     "ContainingType": "FitnessApp.Controllers.TrainingsessionController",
     "Method": "GetSessionCountPerMonthForYearWithType",
     "RelativePath": "api/Trainingsession/sessions/stats-with-types",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "memberId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FitnessApp.Controllers.TrainingsessionController",
+    "Method": "GetTrainingImpactPerMonthForYear",
+    "RelativePath": "api/Trainingsession/sessions/training-impact",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

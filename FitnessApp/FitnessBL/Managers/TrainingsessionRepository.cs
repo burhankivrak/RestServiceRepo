@@ -1,6 +1,7 @@
 ﻿using FitnessApp.Data;
 using FitnessApp.Interface;
 using FitnessApp.Model;
+using FitnessBL.Exceptions;
 
 namespace FitnessApp.Manager
 {
@@ -16,14 +17,22 @@ namespace FitnessApp.Manager
         public IEnumerable<RunningSessionDetail> GetRunningSessionDetails(int runningSessionId)
         {
             return _context.RunningSessionDetail
-                           //.Include(rs => rs.RunningSession)
-                           //.ThenInclude(rs => rs.Member)
                            .Where(rsd => rsd.RunningSessionId == runningSessionId);
         }
 
         public IEnumerable<object> GetSessionsForMonthAndYear(string type, int memberId, int month, int year)
         {
-           
+
+            if (month < 1 || month > 12)
+            {
+                throw new TrainingsessionException("Month must be between 1 and 12.");
+            }
+
+            if (year < 1900 || year > DateTime.Now.Year)
+            {
+                throw new TrainingsessionException("Year must be a valid year.");
+            }
+
             var runningSessions = _context.RunningSession
                 .Where(rs => rs.MemberId == memberId && rs.Date.Month == month && rs.Date.Year == year)
                 .OrderBy(rs => rs.Date)
@@ -50,7 +59,7 @@ namespace FitnessApp.Manager
             }
             else
             {
-                throw new Exception("Invalid training type specified.");
+                throw new TrainingsessionException("Invalid training type specified.");
             }
 
             foreach (var session in cyclingSessions)
@@ -95,7 +104,7 @@ namespace FitnessApp.Manager
             }
             else
             {
-                throw new Exception("Invalid training type specified.");
+                throw new TrainingsessionException("Invalid training type specified.");
             }
 
             var totalSessions = sessions.Count;
@@ -122,6 +131,10 @@ namespace FitnessApp.Manager
 
         public Dictionary<int, int> GetSessionCountPerMonthForYear(string type, int memberId, int year)
         {
+            if (year < 1900 || year > DateTime.Now.Year)
+            {
+                throw new TrainingsessionException("Year is invalid.");
+            }
             var runningSessions = _context.RunningSession
                 .Where(rs => rs.MemberId == memberId && rs.Date.Year == year)
                 .ToList();
@@ -147,7 +160,7 @@ namespace FitnessApp.Manager
             }
             else
             {
-                throw new Exception("Invalid training type specified.");
+                throw new TrainingsessionException("Invalid training type specified.");
             }
 
             var sessionCountPerMonth = sessions
@@ -165,8 +178,44 @@ namespace FitnessApp.Manager
             return sessionCountPerMonth;
         }
 
+        public IEnumerable<object> GetTrainingImpactPerMonthForYear(int memberId, int year)
+        {
+            if (year < 1900 || year > DateTime.Now.Year)
+            {
+                throw new TrainingsessionException("Year is invalid.");
+            }
+
+            var cyclingSessions = _context.CyclingSession
+                .Where(cs => cs.MemberId == memberId && cs.Date.Year == year)
+                .ToList();
+
+            var result = new List<object>();
+
+            for (int month = 1; month <= 12; month++)
+            {
+                int lowImpact = cyclingSessions.Count(cs => cs.Date.Month == month && cs.Trainingsimpact == "low");
+                int mediumImpact = cyclingSessions.Count(cs => cs.Date.Month == month && cs.Trainingsimpact == "medium");
+                int highImpact = cyclingSessions.Count(cs => cs.Date.Month == month && cs.Trainingsimpact == "high");
+
+                result.Add(new
+                {
+                    Month = month,
+                    LowImpact = lowImpact,
+                    MediumImpact = mediumImpact,
+                    HighImpact = highImpact
+                });
+            }
+
+            return result;
+        }
+
         public IEnumerable<object> GetSessionCountPerMonthForYearWithType(int memberId, int year)
         {
+
+            if (year < 1900 || year > DateTime.Now.Year)
+            {
+                throw new TrainingsessionException("Year is invalid.");
+            }
             var runningSessions = _context.RunningSession
                 .Where(rs => rs.MemberId == memberId && rs.Date.Year == year)
                 .ToList();

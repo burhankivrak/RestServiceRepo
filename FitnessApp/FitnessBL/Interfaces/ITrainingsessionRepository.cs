@@ -10,6 +10,6 @@ namespace FitnessApp.Interface
 
         Dictionary<int, int> GetSessionCountPerMonthForYear(string type, int memberId, int year);
         IEnumerable<object> GetSessionCountPerMonthForYearWithType(int memberId, int year);
-
+        IEnumerable<object> GetTrainingImpactPerMonthForYear(int memberId, int year);
     }
 }

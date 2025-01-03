@@ -19,13 +19,13 @@ namespace FitnessApp.Model
 
         [JsonIgnore]
         [ForeignKey("ReservationId")]
-        public Reservation Reservation { get; set; }
+        public Reservation? Reservation { get; set; }
         [JsonIgnore]
         [ForeignKey("EquipmentId")]
-        public Equipment Equipment { get; set; }
+        public Equipment? Equipment { get; set; }
         [JsonIgnore]
         [ForeignKey("TimeslotId")]
-        public Timeslot Timeslot { get; set; }
+        public Timeslot? Timeslot { get; set; }
 
         public ReservationTimeslot() { }
         public ReservationTimeslot(int reservationTimeslotId, int reservationId, int timeslotId, int equipmentId) 

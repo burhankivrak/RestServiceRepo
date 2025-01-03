@@ -1,5 +1,6 @@
 ﻿using FitnessApp.Interface;
 using FitnessApp.Model;
+using FitnessBL.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FitnessApp.Controllers
@@ -22,7 +23,7 @@ namespace FitnessApp.Controllers
             {
                 return Ok(_repo.GetProgram(programCode));
             }
-            catch (Exception ex)
+            catch (ProgramException ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -38,7 +39,7 @@ namespace FitnessApp.Controllers
                     new { programCode = program.ProgramCode },
                     program);
             }
-            catch (Exception ex)
+            catch (ProgramException ex)
             {
                 return BadRequest(ex.Message);
             }

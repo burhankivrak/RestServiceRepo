@@ -1,0 +1,36 @@
+﻿<Window x:Class="FitnessWPFClient.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Registreren" Height="600" Width="450">
+
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20">
+            <TextBlock Text="Voornaam:" />
+            <TextBox x:Name="VoornaamTextBox" Width="260" Height="25" Margin="0,5" />
+
+            <TextBlock Text="Achternaam:" Margin="0,10,0,0"/>
+            <TextBox x:Name="AchternaamTextBox" Width="260" Height="25" Margin="0,5" />
+
+            <TextBlock Text="Emailadres:" Margin="0,10,0,0"/>
+            <TextBox x:Name="EmailTextBox" Width="260" Height="25" Margin="0,5" />
+
+            <TextBlock Text="Verblijfsplaats:" Margin="0,10,0,0"/>
+            <TextBox x:Name="VerblijfsplaatsTextBox" Width="260" Height="25" Margin="0,5" />
+
+            <TextBlock Text="Geboortedatum:" Margin="0,10,0,0"/>
+            <DatePicker x:Name="GeboortedatumPicker" Width="260" Margin="0,5" />
+
+            <TextBlock Text="Interesses:" Margin="0,10,0,0"/>
+            <TextBox x:Name="InteressesTextBox" Width="260" Height="25" Margin="0,5" ToolTip="Comma-separated (e.g., Fitness, Yoga)" />
+
+            <TextBlock Text="Klant Type:" Margin="0,10,0,0"/>
+            <ComboBox Name="KlantTypeComboBox" Width="260" Margin="0,5">
+                <ComboBoxItem Content="Bronze" IsSelected="True" />
+                <ComboBoxItem Content="Silver" />
+                <ComboBoxItem Content="Gold" />
+            </ComboBox>
+
+            <Button Content="Registreren" Width="260" Height="30" HorizontalAlignment="Center" Margin="0,20" Click="RegisterButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

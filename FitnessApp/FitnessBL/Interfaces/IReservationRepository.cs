@@ -7,7 +7,7 @@ namespace FitnessApp.Interface
     {
         void AddReservation(Reservation res);
         Reservation GetReservation(int id);
-        void RemoveReservation(Reservation res);
+        void RemoveReservation(int id);
         void UpdateReservation(Reservation res);
         bool ExistsReservation(int id);
     }

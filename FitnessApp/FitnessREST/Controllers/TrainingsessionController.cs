@@ -1,5 +1,6 @@
 ﻿using FitnessApp.Interface;
 using FitnessApp.Model;
+using FitnessBL.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,9 +35,9 @@ namespace FitnessApp.Controllers
                 var sessions = _repo.GetSessionsForMonthAndYear(type, memberId, month, year);
                 return Ok(sessions);
             }
-            catch (Exception ex)
+            catch (TrainingsessionException ex)
             {
-                return BadRequest(new { message = ex.Message });
+                return BadRequest(ex.Message);
             }
         }
 
@@ -48,9 +49,9 @@ namespace FitnessApp.Controllers
                 var stats = _repo.GetSessionStatsForMember(type, memberId);
                 return Ok(stats);
             }
-            catch (Exception ex)
+            catch (TrainingsessionException ex)
             {
-                return BadRequest(new { message = ex.Message });
+                return BadRequest(ex.Message);
             }
         }
 
@@ -62,9 +63,9 @@ namespace FitnessApp.Controllers
                 var monthlyCounts = _repo.GetSessionCountPerMonthForYear(type, memberId, year);
                 return Ok(monthlyCounts); 
             }
-            catch (Exception ex)
+            catch (TrainingsessionException ex)
             {
-                return BadRequest(new { message = ex.Message });
+                return BadRequest(ex.Message);
             }
         }
 
@@ -76,11 +77,26 @@ namespace FitnessApp.Controllers
                 var result = _repo.GetSessionCountPerMonthForYearWithType(memberId, year);
                 return Ok(result);
             }
-            catch (Exception ex)
+            catch (TrainingsessionException ex)
             {
-                return BadRequest(new { message = ex.Message });
+                return BadRequest(ex.Message);
             }
         }
+
+        [HttpGet("sessions/training-impact")]
+        public ActionResult<IEnumerable<object>> GetTrainingImpactPerMonthForYear([FromQuery] int memberId, [FromQuery] int year)
+        {
+            try
+            {
+                var result = _repo.GetTrainingImpactPerMonthForYear(memberId, year);
+                return Ok(result);
+            }
+            catch (TrainingsessionException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
 
     }
 }

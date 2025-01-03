@@ -2,7 +2,9 @@
 using FitnessApp.Data;
 using FitnessApp.Interface;
 using FitnessApp.Model;
+using FitnessBL.Exceptions;
 using Microsoft.EntityFrameworkCore;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FitnessApp.Manager
 {
@@ -18,7 +20,7 @@ namespace FitnessApp.Manager
         public void AddMember(Members member)
         {
             if (ExistsMember(member.Id))
-                throw new Exception("Member already exists");
+                throw new MemberException("Member already exists");
 
             _context.Members.Add(member);
             _context.SaveChanges();
@@ -29,17 +31,31 @@ namespace FitnessApp.Manager
             var member = _context.Members.FirstOrDefault(m => m.Id == id);
 
             if (member == null)
-                throw new Exception("Member doesn't exist");
+                throw new MemberException("Member doesn't exist");
 
             return member;
         }
+
+        public Members? GetMemberByEmailAndBirthday(string email, DateTime geboortedatum)
+        {
+            var member = _context.Members
+                   .FirstOrDefault(m => m.Emailadres.ToLower() == email.ToLower()
+                                     && m.Geboortedatum.Date == geboortedatum.Date);
+
+            if (member == null)
+                throw new MemberException("No member found with given email and birthday.");
+
+            return member;
+        }
+
+
 
         public void UpdateMember(Members member)
         {
             var existingMember = _context.Members.FirstOrDefault(m => m.Id == member.Id);
 
             if (existingMember == null)
-                throw new Exception("Member doesn't exist");
+                throw new MemberException("Member doesn't exist");
 
             _context.Entry(existingMember).CurrentValues.SetValues(member);
             _context.SaveChanges();
@@ -62,11 +78,11 @@ namespace FitnessApp.Manager
 
         public IEnumerable<FitnessProgram> GetProgramMembersForMember(int memberId)
         {
-            //var programMembers = context.ProgramMembers.Where(pm =>  pm.MemberId == memberId).ToList();
+            
             var programMembers = _context.ProgramMembers
-                                 .Include(pm => pm.Program) // Laad het gerelateerde programma
+                                 .Include(pm => pm.Program)
                                  .Where(pm => pm.MemberId == memberId)
-                                 .Select(pm => pm.Program) // Selecteer alleen het programma
+                                 .Select(pm => pm.Program) 
                                  .ToList();
 
             return programMembers;
@@ -94,7 +110,7 @@ namespace FitnessApp.Manager
             }
             else
             {
-                throw new Exception("Invalid training type specified.");
+                throw new MemberException("Invalid training type specified.");
             }
             return sessions;
         }
