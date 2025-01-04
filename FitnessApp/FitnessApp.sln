@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessREST", "FitnessREST\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessDL", "FitnessDL\FitnessDL.csproj", "{6890883C-A386-450B-A3FE-BA592F14B085}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessWPFClient", "FitnessWPFClient\FitnessWPFClient.csproj", "{4E1FBB4C-8EF9-4EB4-BBD8-95ABB215009C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessWPFClient", "FitnessWPFClient\FitnessWPFClient.csproj", "{4E1FBB4C-8EF9-4EB4-BBD8-95ABB215009C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessTEST", "FitnessTest\FitnessTEST.csproj", "{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{4E1FBB4C-8EF9-4EB4-BBD8-95ABB215009C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E1FBB4C-8EF9-4EB4-BBD8-95ABB215009C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E1FBB4C-8EF9-4EB4-BBD8-95ABB215009C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

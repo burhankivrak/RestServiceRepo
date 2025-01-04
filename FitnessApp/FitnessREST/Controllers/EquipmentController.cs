@@ -2,6 +2,7 @@
 using FitnessApp.Model;
 using FitnessBL.Exceptions;
 using FitnessDL.Enums;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FitnessApp.Controllers
@@ -34,8 +35,15 @@ namespace FitnessApp.Controllers
         [HttpPost]
         public ActionResult<Equipment> Post([FromBody] Equipment e)
         {
-            _repo.AddEquipment(e);
-            return CreatedAtAction(nameof(Get), new { id = e.Id }, e);
+            try
+            {
+                _repo.AddEquipment(e);
+                return CreatedAtAction(nameof(Get), new { id = e.Id }, e);
+            }
+            catch (EquipmentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPut("{id}")]
@@ -64,10 +72,11 @@ namespace FitnessApp.Controllers
                 _repo.RemoveEquipment(id);
                 return NoContent();
             }
-            catch (ReservationException ex)
+            catch (EquipmentException ex)
             {
                 return BadRequest(ex.Message);
             }
+
         }
     }
 }

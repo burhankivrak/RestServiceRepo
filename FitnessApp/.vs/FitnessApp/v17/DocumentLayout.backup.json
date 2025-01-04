@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4E1FBB4C-8EF9-4EB4-BBD8-95ABB215009C}|FitnessWPFClient\\FitnessWPFClient.csproj|c:\\users\\burha\\desktop\\hogent 2024-2025\\semester 1\\pg 2\\opdracht rest-service\\restservicerepo\\fitnessapp\\fitnesswpfclient\\overzichtwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E1FBB4C-8EF9-4EB4-BBD8-95ABB215009C}|FitnessWPFClient\\FitnessWPFClient.csproj|solutionrelative:fitnesswpfclient\\overzichtwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTest.csproj|c:\\users\\burha\\desktop\\hogent 2024-2025\\semester 1\\pg 2\\opdracht rest-service\\restservicerepo\\fitnessapp\\fitnesstest\\trainingsessioncontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTest.csproj|solutionrelative:fitnesstest\\trainingsessioncontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTest.csproj|c:\\users\\burha\\desktop\\hogent 2024-2025\\semester 1\\pg 2\\opdracht rest-service\\restservicerepo\\fitnessapp\\fitnesstest\\reservationtimeslotcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTest.csproj|solutionrelative:fitnesstest\\reservationtimeslotcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTest.csproj|c:\\users\\burha\\desktop\\hogent 2024-2025\\semester 1\\pg 2\\opdracht rest-service\\restservicerepo\\fitnessapp\\fitnesstest\\reservationcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTest.csproj|solutionrelative:fitnesstest\\reservationcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTest.csproj|c:\\users\\burha\\desktop\\hogent 2024-2025\\semester 1\\pg 2\\opdracht rest-service\\restservicerepo\\fitnessapp\\fitnesstest\\programcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTest.csproj|solutionrelative:fitnesstest\\programcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTest.csproj|c:\\users\\burha\\desktop\\hogent 2024-2025\\semester 1\\pg 2\\opdracht rest-service\\restservicerepo\\fitnessapp\\fitnesstest\\membercontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTest.csproj|solutionrelative:fitnesstest\\membercontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +35,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "OverzichtWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessWPFClient\\OverzichtWindow.xaml.cs",
-              "RelativeDocumentMoniker": "FitnessWPFClient\\OverzichtWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessWPFClient\\OverzichtWindow.xaml.cs",
-              "RelativeToolTip": "FitnessWPFClient\\OverzichtWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAC2AAAAAAAAAA==",
+              "Title": "TrainingsessionControllerTest.cs",
+              "DocumentMoniker": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessTest\\TrainingsessionControllerTest.cs",
+              "RelativeDocumentMoniker": "FitnessTest\\TrainingsessionControllerTest.cs",
+              "ToolTip": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessTest\\TrainingsessionControllerTest.cs",
+              "RelativeToolTip": "FitnessTest\\TrainingsessionControllerTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T19:10:51.836Z",
+              "WhenOpened": "2025-01-04T13:01:04.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ReservationTimeslotControllerTest.cs",
+              "DocumentMoniker": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessTest\\ReservationTimeslotControllerTest.cs",
+              "RelativeDocumentMoniker": "FitnessTest\\ReservationTimeslotControllerTest.cs",
+              "ToolTip": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessTest\\ReservationTimeslotControllerTest.cs",
+              "RelativeToolTip": "FitnessTest\\ReservationTimeslotControllerTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T13:01:01.572Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReservationControllerTest.cs",
+              "DocumentMoniker": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessTest\\ReservationControllerTest.cs",
+              "RelativeDocumentMoniker": "FitnessTest\\ReservationControllerTest.cs",
+              "ToolTip": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessTest\\ReservationControllerTest.cs",
+              "RelativeToolTip": "FitnessTest\\ReservationControllerTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T13:00:55.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProgramControllerTest.cs",
+              "DocumentMoniker": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessTest\\ProgramControllerTest.cs",
+              "RelativeDocumentMoniker": "FitnessTest\\ProgramControllerTest.cs",
+              "ToolTip": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessTest\\ProgramControllerTest.cs",
+              "RelativeToolTip": "FitnessTest\\ProgramControllerTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T13:00:52.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MemberControllerTest.cs",
+              "DocumentMoniker": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessTest\\MemberControllerTest.cs",
+              "RelativeDocumentMoniker": "FitnessTest\\MemberControllerTest.cs",
+              "ToolTip": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\FitnessTest\\MemberControllerTest.cs",
+              "RelativeToolTip": "FitnessTest\\MemberControllerTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T13:00:48.896Z",
               "EditorCaption": ""
             }
           ]
