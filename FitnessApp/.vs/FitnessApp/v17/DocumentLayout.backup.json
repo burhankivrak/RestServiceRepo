@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\burha\\Desktop\\HoGent 2024-2025\\Semester 1\\PG 2\\Opdracht REST-Service\\RestServiceRepo\\FitnessApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTest.csproj|c:\\users\\burha\\desktop\\hogent 2024-2025\\semester 1\\pg 2\\opdracht rest-service\\restservicerepo\\fitnessapp\\fitnesstest\\trainingsessioncontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTest.csproj|solutionrelative:fitnesstest\\trainingsessioncontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTEST.csproj|c:\\users\\burha\\desktop\\hogent 2024-2025\\semester 1\\pg 2\\opdracht rest-service\\restservicerepo\\fitnessapp\\fitnesstest\\trainingsessioncontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTEST.csproj|solutionrelative:fitnesstest\\trainingsessioncontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTest.csproj|c:\\users\\burha\\desktop\\hogent 2024-2025\\semester 1\\pg 2\\opdracht rest-service\\restservicerepo\\fitnessapp\\fitnesstest\\reservationtimeslotcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTest.csproj|solutionrelative:fitnesstest\\reservationtimeslotcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTEST.csproj|c:\\users\\burha\\desktop\\hogent 2024-2025\\semester 1\\pg 2\\opdracht rest-service\\restservicerepo\\fitnessapp\\fitnesstest\\reservationtimeslotcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTEST.csproj|solutionrelative:fitnesstest\\reservationtimeslotcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTest.csproj|c:\\users\\burha\\desktop\\hogent 2024-2025\\semester 1\\pg 2\\opdracht rest-service\\restservicerepo\\fitnessapp\\fitnesstest\\reservationcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTest.csproj|solutionrelative:fitnesstest\\reservationcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTEST.csproj|c:\\users\\burha\\desktop\\hogent 2024-2025\\semester 1\\pg 2\\opdracht rest-service\\restservicerepo\\fitnessapp\\fitnesstest\\reservationcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTEST.csproj|solutionrelative:fitnesstest\\reservationcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTest.csproj|c:\\users\\burha\\desktop\\hogent 2024-2025\\semester 1\\pg 2\\opdracht rest-service\\restservicerepo\\fitnessapp\\fitnesstest\\programcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTest.csproj|solutionrelative:fitnesstest\\programcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTEST.csproj|c:\\users\\burha\\desktop\\hogent 2024-2025\\semester 1\\pg 2\\opdracht rest-service\\restservicerepo\\fitnessapp\\fitnesstest\\programcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTEST.csproj|solutionrelative:fitnesstest\\programcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTest.csproj|c:\\users\\burha\\desktop\\hogent 2024-2025\\semester 1\\pg 2\\opdracht rest-service\\restservicerepo\\fitnessapp\\fitnesstest\\membercontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTest.csproj|solutionrelative:fitnesstest\\membercontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTEST.csproj|c:\\users\\burha\\desktop\\hogent 2024-2025\\semester 1\\pg 2\\opdracht rest-service\\restservicerepo\\fitnessapp\\fitnesstest\\membercontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0E59CA1-E99A-40F7-A8CC-FE0D73A0250E}|FitnessTest\\FitnessTEST.csproj|solutionrelative:fitnesstest\\membercontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -55,8 +55,7 @@
               "RelativeToolTip": "FitnessTest\\ReservationTimeslotControllerTest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T13:01:01.572Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T13:01:01.572Z"
             },
             {
               "$type": "Document",
@@ -68,8 +67,7 @@
               "RelativeToolTip": "FitnessTest\\ReservationControllerTest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T13:00:55.682Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T13:00:55.682Z"
             },
             {
               "$type": "Document",
@@ -81,8 +79,7 @@
               "RelativeToolTip": "FitnessTest\\ProgramControllerTest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T13:00:52.576Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T13:00:52.576Z"
             },
             {
               "$type": "Document",
@@ -94,8 +91,7 @@
               "RelativeToolTip": "FitnessTest\\MemberControllerTest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T13:00:48.896Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T13:00:48.896Z"
             }
           ]
         }
